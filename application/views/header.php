@@ -26,13 +26,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       background-color: #f2f2f2;
       padding: 25px;
     }
+
+    .panel-body {
+      min-height: 500px;
+      max-height: 500px;
+    }
+    .vertical-center {
+      min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+      min-height: 100vh; /* These two lines are counted as one :-)       */
+
+      display: flex;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Online Shop</h1>      
+    <h1>Pak JuLi Store</h1>      
     <p>Be Stylish and Fashionable</p>
   </div>
 </div>
@@ -54,12 +66,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
 			<span class="caret"></span></a>
 			<ul class="dropdown-menu">
-				<li><a href="menswear.html">menswear</a></li>
-				<li><a href="womenswear.html">womenswear</a></li>
-				<li><a href="dress.html">dress</a></li>
-				<li><a href="shoesformen.html">shoes for men</a></li>
-				<li><a href="shoesforwomen.html">shoes for women</a></li>
-				<li><a href="accessories.html">accessories</a></li>
+				<li><a href="menswear.html">Menswear</a></li>
+				<li><a href="womenswear.html">Womenswear</a></li>
+				<li><a href="dress.html">Dress</a></li>
+				<li><a href="shoesformen.html">Shoes For Men</a></li>
+				<li><a href="shoesforwomen.html">Shoes For Women</a></li>
+				<li><a href="accessories.html">Accessories</a></li>
 			</ul></li>
         <li><a href="#">Deals</a></li>
         <li><a href="#">Stores</a></li>

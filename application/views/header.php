@@ -7,39 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    /* Remove the jumbotron's default bottom margin */ 
-     .jumbotron {
-      margin-bottom: 0;
-    }
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-
-    .panel-body {
-      min-height: 500px;
-      max-height: 500px;
-    }
-    .vertical-center {
-      min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-      min-height: 100vh; /* These two lines are counted as one :-)       */
-
-      display: flex;
-      align-items: center;
-    }
-  </style>
-</head>
+  </head>
 <body>
 
 <div class="jumbotron">

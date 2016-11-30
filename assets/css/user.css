@@ -1,0 +1,40 @@
+html, body {
+  height: 100%;
+}
+
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+  width: 100%;
+}
+
+.center_div {
+  margin: 0 auto;
+  margin-bottom: 100px;
+  width: 25%;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+}
+
+.panel-body {
+  margin: 0 25px 0 25px;
+}
+
+#user_panel {
+  float: left;
+}

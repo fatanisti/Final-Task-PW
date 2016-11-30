@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-
-class User_Authentication extends CI_Controller {
+class User extends CI_Controller {
 
     public function __construct() 
     {
@@ -22,7 +21,7 @@ class User_Authentication extends CI_Controller {
         }
 
         // Tampilkan Login Page
-        public function index()
+        public function user_login()
         {
                 $this->load->view('login');
         }
@@ -36,7 +35,6 @@ class User_Authentication extends CI_Controller {
         // Validasi dan simpan data registrasi ke dalam database
         public function new_user_registration() 
         {
-
                 // Check validation for user input in SignUp form
                 $this->load->helper(array('form', 'url'));
 

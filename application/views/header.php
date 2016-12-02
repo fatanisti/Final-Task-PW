@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
         <li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
 			<span class="caret"></span></a>
@@ -50,7 +50,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
       </ul>
     </div>
   </div>

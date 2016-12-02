@@ -24,6 +24,7 @@
 			    				<th>Gambar Barang</th>
 			    				<th>Nama Barang</th>
 			    				<th>Harga Barang</th>
+			    				<th>Hapus</th>
 		    				</tr>
 		    			</thead>
 		    			<tbody>
@@ -31,11 +32,13 @@
 			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
 			    				<td>Nama Barang</td>
 			    				<td>Harga Barang</td>
+			    				<td><a href="#" class="btn btn-alert">Delete</a></td>
 		    				</tr>
 		    				<tr>			    					
 			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
 			    				<td>Nama Barang</td>
 			    				<td>Harga Barang</td>
+			    				<td><a href="#" class="btn btn-alert">Delete</a></td>
 		    				</tr>
 		    			</tbody>
 		    		</table>

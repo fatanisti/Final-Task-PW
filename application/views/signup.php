@@ -68,10 +68,20 @@
           </div>
         </div>
         <p class="text-center">
-          <a href="<?php echo base_url(); ?>index.php/login" class="btn btn-default btn-lg">Login</a>
-          <button type="button" class="btn btn-primary btn-lg">Register</button>
+          <a href="<?php echo base_url(); ?>index.php/login" class="btn btn-primary btn-lg">Login</a>
+          <button type="button" class="btn btn-success btn-lg">Register</button>
         </p>
       </form>
     </div>
+    <?php if (validation_errors()): ?>
+      <div class="alert alert-danger" role="alert">
+        <?php echo validation_errors(); ?>
+      </div>
+    <?php endif ?>
+    <?php if (isset($error)): ?>
+      <div class="alert alert-danger">
+        <?php echo $error; ?>
+      </div>
+    <?php endif ?>
   </div>
 </div>

@@ -1,6 +1,5 @@
 <?php
 
-//session_start();
 class User extends CI_Controller {
 
     public function __construct() 
@@ -14,10 +13,10 @@ class User extends CI_Controller {
         $this->load->library('form_validation');
 
         // Load librari session
-        // $this->load->library('session');
+        $this->load->library('session');
 
         // Load database
-        // $this->load->model('login_database');
+        $this->load->model('login_database');
         }
 
         // Tampilkan Login Page
@@ -31,7 +30,9 @@ class User extends CI_Controller {
         // Tampilkan Registration Page
         public function user_registration_show() 
         {
+                $this->load->view('header');
                 $this->load->view('signup');
+                $this->load->view('footer');
         }
 
         // Validasi dan simpan data registrasi ke dalam database

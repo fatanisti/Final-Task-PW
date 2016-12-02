@@ -1,5 +1,3 @@
-
-?>
 <?php
 if (isset($logout_message)) {
   echo "<div class='message'>";
@@ -31,8 +29,7 @@ if (isset($message_display)) {
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon glyphicon glyphicon-user"></span>
-              <input type="text" class="form-control" name="user_name" id="user_name"  placeholder="Enter your Username"/>
-              <input type="text" class="form-control" name="name" id="user_name"  placeholder="Enter your Name"/>
+              <input type="text" class="form-control" name="name" id="user_name"  placeholder="Enter your Username"/>
             </div>
           </div>
         </div>
@@ -47,15 +44,15 @@ if (isset($message_display)) {
           </div>
         </div>
         <p class="text-center">
-          <a href="<?php echo base_url(); ?>index.php/signup" class="btn btn-default btn-lg">Create an Account</a>
+          <a href="<?php echo base_url(); ?>index.php/signup" class="btn btn-success btn-lg">Create an Account</a>
           <button type="submit" class="btn btn-primary btn-lg">Login</button>
         </p>
       </form>
       <?php
-        echo "<div class='alert alert-danger'>";
         if (isset($error_message)) {
+          echo "<div class='alert alert-danger'>";
           echo $error_message;
-        }
+        } 
         echo validation_errors();
         echo "</div>";
       ?> 

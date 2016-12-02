@@ -14,10 +14,10 @@ class User extends CI_Controller {
         $this->load->library('form_validation');
 
         // Load librari session
-        $this->load->library('session');
+        // $this->load->library('session');
 
         // Load database
-        $this->load->model('login_database');
+        // $this->load->model('login_database');
         }
 
         // Tampilkan Login Page
@@ -109,5 +109,12 @@ class User extends CI_Controller {
                 $this->session->unset_userdata('logged_in', $sess_array);
                 $insert['message_display'] = 'Anda telah berhasil logout.';
                 $this->load->view('login', $insert);
+        }
+
+        public function user()
+        {
+            $this->load->view('header');
+            $this->load->view('user');
+            $this->load->view('footer');
         }
 }

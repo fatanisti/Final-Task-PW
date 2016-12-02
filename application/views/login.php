@@ -9,11 +9,11 @@
       <form class="form-horizontal" method="post" action="#">
         
         <div class="form-group">
-          <label for="name" class="cols-sm-2 control-label">Email</label>
+          <label for="name" class="cols-sm-2 control-label">Username</label>
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon glyphicon glyphicon-user"></span>
-              <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+              <input type="text" class="form-control" name="user_name" id="user_name"  placeholder="Enter your Username"/>
             </div>
           </div>
         </div>

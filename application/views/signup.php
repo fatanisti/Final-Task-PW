@@ -7,13 +7,33 @@
     </div> 
     <div class="main-login main-center panel-body">
       <form class="form-horizontal" method="post" action="#">
-        
-        <div class="form-group">
-          <label for="name" class="cols-sm-2 control-label">Your Name</label>
+
+      <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">Your Userame</label>
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon glyphicon glyphicon-user"></span>
-              <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+              <input type="text" class="form-control" name="user_name" id="user_name"  placeholder="Enter your Name"/>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">First Name</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon glyphicon glyphicon-user"></span>
+              <input type="text" class="form-control" name="first_name" id="first_name"  placeholder="Enter your First Name"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">Last Name</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon glyphicon glyphicon-user"></span>
+              <input type="text" class="form-control" name="last_name" id="last_name"  placeholder="Enter your Last Name"/>
             </div>
           </div>
         </div>

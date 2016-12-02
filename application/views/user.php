@@ -10,20 +10,61 @@
 			<a href="#" class="btn btn-link">GANTI PASSWORD</a>
 		</div>
 	</div>
-	<div class="container" style="float: left;">
+	<div class="container" style="float: left; width: 80%; padding-left: 50px;">
 		<ul class="nav nav-tabs nav-justified">
 			<li role="presentation" class="active"><a data-toggle="tab" href="#cart">Cart</a></li>
 			<li role="presentation"><a data-toggle="tab" href="#sell">Sell</a></li>
 		</ul>
 		<div class="tab-content">
 		    <div id="cart" class="tab-pane fade in active">
-		    	<!-- TODO : ganti sama ListView -->
-		      <h3>Cart</h3>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			    <div class="table-responsive">	
+		    		<table class="table table-striped container-fluid">
+		    			<thead>
+		    				<tr>
+			    				<th>Gambar Barang</th>
+			    				<th>Nama Barang</th>
+			    				<th>Harga Barang</th>
+		    				</tr>
+		    			</thead>
+		    			<tbody>
+		    				<tr>			    					
+			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
+			    				<td>Nama Barang</td>
+			    				<td>Harga Barang</td>
+		    				</tr>
+		    				<tr>			    					
+			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
+			    				<td>Nama Barang</td>
+			    				<td>Harga Barang</td>
+		    				</tr>
+		    			</tbody>
+		    		</table>
+			    </div>
 		    </div>
 		    <div id="sell" class="tab-pane fade">
-		      <h3>Menu 1</h3>
-		      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		    	<div class="table-responsive">
+		    		<table class="table table-striped container-fluid">
+		    			<thead>
+		    				<tr>
+			    				<th>Gambar Barang</th>
+			    				<th>Nama Barang</th>
+			    				<th>Harga Barang</th>
+		    				</tr>
+		    			</thead>
+		    			<tbody>
+		    				<tr>			    					
+			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
+			    				<td>Nama Barang</td>
+			    				<td>Harga Barang</td>
+		    				</tr>
+		    				<tr>			    					
+			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
+			    				<td>Nama Barang</td>
+			    				<td>Harga Barang</td>
+		    				</tr>
+		    			</tbody>
+		    		</table>
+		    	</div>
 		    </div>
   		</div>
   	</div>

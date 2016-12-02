@@ -1,7 +1,4 @@
-<?php
-if (isset($this->session->userdata['logged_in'])) {
-  header("location: http://localhost:8012/Final-Task-PW/index.php/login");
-}
+
 ?>
 <?php
 if (isset($logout_message)) {
@@ -25,11 +22,7 @@ if (isset($message_display)) {
         </div>
     </div>
     <?php echo form_open('User/user_login_process'); ?>
-    <?php
-    echo "<div class='error_msg'>";
-    echo validation_errors();
-    echo "</div>";
-    ?> 
+    
     <div class="main-login main-center panel-body">
       <form class="form-horizontal" method="post" action="#">
         
@@ -57,6 +50,14 @@ if (isset($message_display)) {
           <button type="submit" class="btn btn-primary btn-lg">Login</button>
         </p>
       </form>
+      <?php
+        echo "<div class='alert alert-danger'>";
+        if (isset($error_message)) {
+          echo $error_message;
+        }
+        echo validation_errors();
+        echo "</div>";
+      ?> 
       <?php echo form_close(); ?>
     </div>
   </div>

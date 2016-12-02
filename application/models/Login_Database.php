@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 <?php
 
-Class Login_Database extends CI_Model {
+/*Class Login_Database extends CI_Model {
 
     // Baca tabel database
     public function login($data) {
@@ -36,15 +36,20 @@ Class Login_Database extends CI_Model {
     }
 }
 
-=======
-<?php
+//=======
+*/
 
 Class Login_Database extends CI_Model {
 
     // Baca tabel database
+    function __construct()
+    {
+        $this->load->database();
+    }
+
     public function login($data) {
 
-        $condition = "user_name =" . "'" . $data['user_name'] . "' AND " . "user_password =" . "'" . $data['user_password'] . "'";
+        $condition = "user_name =" . "'" . $data['user_name'] . "' AND " . "user_pass =" . "'" . $data['user_pass'] . "'";
         $this->db->select('*');
         $this->db->from('pjs_users');
         $this->db->where($condition);
@@ -74,5 +79,5 @@ Class Login_Database extends CI_Model {
     }
 }
 
->>>>>>> 71991f69f4fcb6ef5154bdc53907b8f3a6bea8c0
+//>>>>>>> 71991f69f4fcb6ef5154bdc53907b8f3a6bea8c0
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 class User extends CI_Controller {
 
     public function __construct() 
@@ -23,7 +23,9 @@ class User extends CI_Controller {
         // Tampilkan Login Page
         public function user_login()
         {
+                $this->load->view('header');
                 $this->load->view('login');
+                $this->load->view('footer');
         }
 
         // Tampilkan Registration Page
@@ -71,22 +73,24 @@ class User extends CI_Controller {
         // Check for user login process
         public function user_login_process() {
 
-                $this->form_validation->set_rules('user_name', 'Nama Pengguna', 'trim|required|xss_clean');
-                $this->form_validation->set_rules('user_pass', 'Password', 'trim|required|xss_clean');
+                $this->form_validation->set_rules('name', 'Username', 'required');
+                $this->form_validation->set_rules('password', 'Password', 'required');
 
                 if ($this->form_validation->run() == FALSE) {
-                        if(isset($this->session->userdata['logged_in'])){
-                                $this->load->view('index');
-                        } else {
+                        //if(isset($this->session->userdata['logged_in'])){
+                          //      $this->load->view('index');
+                        //} else {
+                               $this->load->view('header');
                                 $this->load->view('login');
-                        }
+                                $this->load->view('footer');
+                        //}
                 } else {
-                        $insert = array(
-                                'user_name' => $this->input->post('user_name'),
-                                'user_pass' => $this->input->post('user_pass') );
-                        $result = $this->login_database->login($insert);
+                        $data = array(
+                                'user_name' => $this->input->post('name'),
+                                'user_pass' => $this->input->post('password') );
+                        $result = $this->login_database->login($data);
                         if ($result == TRUE) {
-                                $username = $this->input->post('user_name');
+                                $username = $this->input->post('name');
                                 $result = $this->login_database->read_user_information($username);
                                 if ($result != false) {
                                         $session_data = array(
@@ -95,11 +99,15 @@ class User extends CI_Controller {
                                         );
                                         // Add user data in session
                                         $this->session->set_userdata('logged_in', $session_data);
-                                        $this->load->view('index');
+                                        $this->load->view('header');
+                                        $this->load->view('layout');
+                                        $this->load->view('footer');
                                         }
                                 } else {
-                                        $insert = array('error_message' => 'Nama Pengguna atau Password Salah');
-                                        $this->load->view('login', $insert);
+                                        $data = array('error_message' => 'Nama Pengguna atau Password Salah');
+                                        $this->load->view('header');
+                                        $this->load->view('login', $data);
+                                        $this->load->view('footer');
                                 }
                         }
         }

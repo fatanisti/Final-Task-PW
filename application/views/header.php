@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$this->load->library('session');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +40,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <li><a href="#">Contact</a></li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
-    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account </a></li>
+    <li><a href="<?php 
+      if (isset($_SESSION['user_name'])) {
+        echo base_url().'index.php/coba1';
+      } else {
+        echo base_url().'index.php/login';
+      }
+    ?>"><span class="glyphicon glyphicon-user"></span> Your Account </a></li>
   </ul>
 </nav>

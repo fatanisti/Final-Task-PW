@@ -32,17 +32,18 @@
 			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
 			    				<td>Nama Barang</td>
 			    				<td>Harga Barang</td>
-			    				<td><a href="#" class="btn btn-alert">Delete</a></td>
+			    				<td><a href="#" class="btn btn-danger btn-lg">Delete</a></td>
 		    				</tr>
 		    				<tr>			    					
 			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
 			    				<td>Nama Barang</td>
 			    				<td>Harga Barang</td>
-			    				<td><a href="#" class="btn btn-alert">Delete</a></td>
+			    				<td><a href="#" class="btn btn-danger btn-lg">Delete</a></td>
 		    				</tr>
 		    			</tbody>
 		    		</table>
 			    </div>
+			    <a href="#" class="btn btn-success btn-lg pull-right" style="margin-bottom: 10px;">Bayar</a>
 		    </div>
 		    <div id="sell" class="tab-pane fade">
 		    	<div class="table-responsive">
@@ -52,6 +53,7 @@
 			    				<th>Gambar Barang</th>
 			    				<th>Nama Barang</th>
 			    				<th>Harga Barang</th>
+			    				<th>Hapus Barang</th>
 		    				</tr>
 		    			</thead>
 		    			<tbody>
@@ -59,15 +61,18 @@
 			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
 			    				<td>Nama Barang</td>
 			    				<td>Harga Barang</td>
+			    				<td><a href="#" class="btn btn-danger btn-lg">Delete</a></td>
 		    				</tr>
 		    				<tr>			    					
 			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
 			    				<td>Nama Barang</td>
 			    				<td>Harga Barang</td>
+			    				<td><a href="#" class="btn btn-danger btn-lg">Delete</a></td>
 		    				</tr>
 		    			</tbody>
 		    		</table>
 		    	</div>
+		    	<a href="#" class="btn btn-success btn-lg pull-right" style="margin-bottom: 10px">Tambah</a>
 		    </div>
   		</div>
   	</div>

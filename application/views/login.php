@@ -43,9 +43,10 @@ if (isset($message_display)) {
             </div>
           </div>
         </div>
+        <a href="#" class="btn-btn-link">Lupa Password</a>
         <p class="text-center">
-          <a href="<?php echo base_url(); ?>index.php/signup" class="btn btn-success btn-lg">Create an Account</a>
-          <button type="submit" class="btn btn-primary btn-lg">Login</button>
+          <a href="<?php echo base_url(); ?>index.php/signup" class="btn btn-success btn-md">Create an Account</a>
+          <button type="submit" class="btn btn-primary btn-md">Login</button>
         </p>
       </form>
       <?php

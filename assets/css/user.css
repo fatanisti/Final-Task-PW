@@ -45,3 +45,17 @@ footer {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.affix {
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.affix + .container-fluid {
+  padding-top: 70px;
+}
+
+.navbar-right {
+  padding-right: 20px;
+}

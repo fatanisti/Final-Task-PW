@@ -20,37 +20,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 </div>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="<?php echo base_url(); ?>">Home</a></li>
-        <li class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
-			<span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="menswear.html">Menswear</a></li>
-				<li><a href="womenswear.html">Womenswear</a></li>
-				<li><a href="dress.html">Dress</a></li>
-				<li><a href="shoesformen.html">Shoes For Men</a></li>
-				<li><a href="shoesforwomen.html">Shoes For Women</a></li>
-				<li><a href="accessories.html">Accessories</a></li>
-			</ul></li>
-        <li><a href="#">Deals</a></li>
-        <li><a href="#">Stores</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-      </ul>
-    </div>
-  </div>
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="144">
+  <ul class="nav navbar-nav"">
+    <li><a href="<?php echo base_url(); ?>"><span class="glyphicon glyphicon-home"></span></a></li>
+    <li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
+	<span class="caret"></span></a>
+	<ul class="dropdown-menu">
+		<li><a href="menswear.html">Menswear</a></li>
+		<li><a href="womenswear.html">Womenswear</a></li>
+		<li><a href="dress.html">Dress</a></li>
+		<li><a href="shoesformen.html">Shoes For Men</a></li>
+		<li><a href="shoesforwomen.html">Shoes For Women</a></li>
+		<li><a href="accessories.html">Accessories</a></li>
+	</ul></li>
+    <li><a href="#">Deals</a></li>
+    <li><a href="#">Stores</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account </a></li>
+  </ul>
 </nav>

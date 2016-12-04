@@ -28,6 +28,8 @@ footer {
 .carousel-inner > .item > a > img {
   width: 70%;
   margin: auto;
+  height: 500px;
+  max-height: 500px;
 }
 
 .panel-body {

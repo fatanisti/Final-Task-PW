@@ -7,11 +7,20 @@ if (isset($logout_message)) {
 ?>
 <?php
 if (isset($message_display)) {
-  echo "<div class='message'>";
+  echo "<div class='alert alert-success text-center'>";
   echo $message_display;
   echo "</div>";
 }
 ?>
+<?php if (isset($_SESSION['message_display'])): ?>
+  <div class="container">
+    <div class="alert alert-danger text-center">
+      <?php echo $_SESSION['message_display']; ?>
+    </div>
+  </div>
+  <?php echo validation_errors(); ?>
+  <?php session_destroy(); ?>  
+<?php endif ?>
 <div class="container center_div">
   <div class="row main panel panel-default">
     <div class="panel-heading">
@@ -43,20 +52,12 @@ if (isset($message_display)) {
             </div>
           </div>
         </div>
-        <a href="#" class="btn-btn-link">Lupa Password</a>
         <p class="text-center">
-          <a href="<?php echo base_url(); ?>index.php/signup" class="btn btn-success btn-md">Create an Account</a>
-          <button type="submit" class="btn btn-primary btn-md">Login</button>
+        <br><br>
+          <a href="<?php echo base_url(); ?>index.php/signup" class="btn btn-success btn-lg">Create an Account</a>
+          <button type="submit" class="btn btn-primary btn-lg">Login</button>
         </p>
       </form>
-      <?php
-        if (isset($error_message)) {
-          echo "<div class='alert alert-danger'>";
-          echo $error_message;
-        } 
-        echo validation_errors();
-        echo "</div>";
-      ?> 
       <?php echo form_close(); ?>
     </div>
   </div>

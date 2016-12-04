@@ -61,7 +61,7 @@ class User extends CI_Controller {
 
 	        $this->login_database->new_user($data);
 
-	        redirect('index.php/login');
+	        redirect('login');
 	    }
 
 
@@ -98,17 +98,21 @@ class User extends CI_Controller {
                     redirect('');
                 }
             } else {
-                $data = array('error_message' => 'Nama Pengguna atau Password Salah');
-                redirect('index.php/login');
+                $data = array('message_display' => 'Nama Pengguna atau Password Salah');
+                
+                $this->session->set_userdata( $data );
+                redirect('login');
             }
         }
     }
 
     public function logout() {
         $sess_array = array('user_name' => '');
-        $this->session->unset_userdata('logged_in', $sess_array);
+        $this->session->unset_userdata($sess_array);
         $insert['message_display'] = 'Anda telah berhasil logout.';
+        $this->load->view('header');
         $this->load->view('login', $insert);
+        $this->load->view('footer');
     }
 
     public function user()

@@ -39,9 +39,9 @@ footer {
 }
 
 .table > tbody > tr > td {
-     vertical-align: middle;
+  vertical-align: middle;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }

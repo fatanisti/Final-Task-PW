@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
+        <li><a href="<?php echo base_url(); ?>">Home</a></li>
         <li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
 			<span class="caret"></span></a>

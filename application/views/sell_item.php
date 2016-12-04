@@ -32,9 +32,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="text-center">
+		<p class="text-center">
 			<a href="<?php echo base_url(); ?>/user/user" class="btn btn-danger btn-lg">Cancel</a>
 			<button class="btn btn-success btn-lg">Sell</button>
-		</div>
+		</p>
+		<p></p>
 	</form>
 </div>

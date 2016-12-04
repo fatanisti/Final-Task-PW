@@ -72,7 +72,7 @@
 		    			</tbody>
 		    		</table>
 		    	</div>
-		    	<a href="#" class="btn btn-success btn-lg pull-right" style="margin-bottom: 10px">Tambah</a>
+		    	<a href="<?php echo base_url(); ?>index.php/user/sell" class="btn btn-success btn-lg pull-right" style="margin-bottom: 10px">Tambah</a>
 		    </div>
   		</div>
   	</div>

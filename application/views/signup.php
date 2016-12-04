@@ -5,6 +5,8 @@
         <h1 class="title">Sign Up</h1>
       </div>
     </div> 
+
+    <?php echo form_open('User/reg_user'); ?>
     <div class="main-login main-center panel-body">
       <form class="form-horizontal" method="post" action="#">
 
@@ -43,7 +45,7 @@
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon glyphicon glyphicon-envelope"></span>
-              <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+              <input type="text" class="form-control" name="user_email" id="email"  placeholder="Enter your Email"/>
             </div>
           </div>
         </div>
@@ -53,7 +55,7 @@
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon glyphicon glyphicon-lock"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-              <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+              <input type="password" class="form-control" name="user_pass" id="password"  placeholder="Enter your Password"/>
             </div>
           </div>
         </div>
@@ -69,9 +71,10 @@
         </div>
         <p class="text-center">
           <a href="<?php echo base_url(); ?>index.php/login" class="btn btn-primary btn-lg">Login</a>
-          <button type="button" class="btn btn-success btn-lg">Register</button>
+          <button type="submit" class="btn btn-success btn-lg">Register</button>
         </p>
       </form>
+      <?php echo form_open('User/reg_user'); ?>
     </div>
     <?php if (validation_errors()): ?>
       <div class="alert alert-danger" role="alert">

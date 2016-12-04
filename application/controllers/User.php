@@ -15,8 +15,9 @@ class User extends CI_Controller {
         // Load librari session
         $this->load->library('session');
 
-        // Load database
+        // Load model
         $this->load->model('login_database');
+        $this->load->model('reg_model');
     }
 
     // Tampilkan Login Page
@@ -36,40 +37,37 @@ class User extends CI_Controller {
     }
 
     // Validasi dan simpan data registrasi ke dalam database
-    public function new_user_registration() 
-    {
-            // Check validation for user input in SignUp form
-            $this->load->helper(array('form', 'url'));
+    public function reg_user()
+	{
+	    $this->form_validation->set_rules('user_name', 'Username', 'required');
+	    $this->form_validation->set_rules('user_pass', 'Password', 'required');
+	    $this->form_validation->set_rules('confirm', 'Confirm Password', 'required');
+	    $this->form_validation->set_rules('first_name', 'Nama Depan', 'required');
+	    $this->form_validation->set_rules('last_name', 'Nama Belakang', 'required');
+	    $this->form_validation->set_rules('user_email', 'Email', 'required');
 
-            $this->load->library('form_validation');
+	    if ($this->form_validation->run() == FALSE) {
+	        $this->load->view('header');
+	        $this->load->view('signup');
+	        $this->load->view('footer');
+	    }else{
+	        $data = array(
+	                'user_name' => $this->input->post('user_name'),
+	                'user_pass' => md5($this->input->post('user_pass')) ,
+	                'first_name' =>$this->input->post('first_name'),
+	                'last_name' =>$this->input->post('last_name'),
+	                'user_email' =>$this->input->post('user_email') 
+	                ); 
 
-            $this->form_validation->set_rules('user_name', 'Nama Pengguna', 'trim|required|is_unique[pjs_users.user_name');
-            $this->form_validation->set_rules('user_pass', 'Password', 'trim|required|min_length[8]',
-            array('required' => 'Anda harus membuat sebuah %s.')
-            );
-            $this->form_validation->set_rules('passconf', 'Konfirmasi Password', 'trim|required|matches[user_pass]');
-            $this->form_validation->set_rules('first_name', 'Nama Depan', 'trim|required');
-            $this->form_validation->set_rules('last_name', 'Nama Belakang', 'trim|required');
-            $this->form_validation->set_rules('user_email', 'Email', 'trim|required|valid_email|is_unique[pjs_users.user_email]');
-            
-            if ($this->form_validation->run() == FALSE) {
-                    $this->load->view('header');
-                    $this->load->view('signup'); 
-                    $this->load->view('footer');
-            } else {
-                    //load users_mode defined in modes/new_user_model.php 
-                    $this->load->model('new_user_model'); 
-                    //create user 
-                    $this->new_user_model->create_user();
-                    if ($insert == TRUE) {
-                            $insert['message_display'] = 'Anda berhasil terdaftar!';
-                            $this->load->view('login', $insert);
-                    } else {
-                            $insert['message_display'] = 'Registrasi gagal!';
-                            $this->load->view('signup', $insert);
-                    }
-            }
-    }
+	        $this->reg_model->new_user($data);
+
+	        $this->load->view('header');
+	        $this->load->view('login',$data);
+	        $this->load->view('footer');
+	    }
+
+
+	}
 
     // Check for user login process
     public function user_login_process() {
@@ -78,17 +76,15 @@ class User extends CI_Controller {
             $this->form_validation->set_rules('password', 'Password', 'required');
 
             if ($this->form_validation->run() == FALSE) {
-                    //if(isset($this->session->userdata['logged_in'])){
-                      //      $this->load->view('index');
-                    //} else {
-                           $this->load->view('header');
-                            $this->load->view('login');
-                            $this->load->view('footer');
-                    //}
+                    
+               	$this->load->view('header');
+                $this->load->view('login');
+                $this->load->view('footer');
+               
             } else {
                     $data = array(
                             'user_name' => $this->input->post('name'),
-                            'user_pass' => $this->input->post('password') );
+                            'user_pass' => md5($this->input->post('password')) );
                     $result = $this->login_database->login($data);
                     if ($result == TRUE) {
                             $username = $this->input->post('name');

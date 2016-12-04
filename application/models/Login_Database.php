@@ -39,6 +39,11 @@ Class Login_Database extends CI_Model {
             return false;
         }
     }
+
+    public function new_user($data)
+    {
+        $this->db->insert('pjs_users',$data);
+    }
 }
 
 ?>

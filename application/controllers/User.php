@@ -17,7 +17,7 @@ class User extends CI_Controller {
 
         // Load model
         $this->load->model('login_database');
-        $this->load->model('reg_model');
+        //$this->load->model('reg_model');
     }
 
     // Tampilkan Login Page
@@ -39,12 +39,12 @@ class User extends CI_Controller {
     // Validasi dan simpan data registrasi ke dalam database
     public function reg_user()
 	{
-	    $this->form_validation->set_rules('user_name', 'Username', 'required');
-	    $this->form_validation->set_rules('user_pass', 'Password', 'required');
+	    $this->form_validation->set_rules('user_name', 'Username', 'required|is_unique');
+	    $this->form_validation->set_rules('user_pass', 'Password', 'required|min_length[6];');
 	    $this->form_validation->set_rules('confirm', 'Confirm Password', 'required');
 	    $this->form_validation->set_rules('first_name', 'Nama Depan', 'required');
 	    $this->form_validation->set_rules('last_name', 'Nama Belakang', 'required');
-	    $this->form_validation->set_rules('user_email', 'Email', 'required');
+	    $this->form_validation->set_rules('user_email', 'Email', 'required|is_unique');
 
 	    if ($this->form_validation->run() == FALSE) {
 	        $this->load->view('header');
@@ -59,7 +59,7 @@ class User extends CI_Controller {
 	                'user_email' =>$this->input->post('user_email') 
 	                ); 
 
-	        $this->reg_model->new_user($data);
+	        $this->login_database->new_user($data);
 
 	        $this->load->view('header');
 	        $this->load->view('login',$data);
@@ -127,6 +127,13 @@ class User extends CI_Controller {
     {
         $this->load->view('header');
         $this->load->view('sell_item');
+        $this->load->view('footer');
+    }
+
+    public function cp()
+    {
+        $this->load->view('header');
+        $this->load->view('change_password');
         $this->load->view('footer');
     }
 }

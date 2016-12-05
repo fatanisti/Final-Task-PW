@@ -14,6 +14,13 @@
   <?php echo validation_errors(); ?>
   <?php session_destroy(); ?>  
 <?php endif ?>
+<?php if (validation_errors() != null): ?>
+  <div class="container">
+    <div class="alert alert-danger text-center">
+      <?php echo validation_errors(); ?>
+    </div>
+  </div>  
+<?php endif ?>
 <div class="container center_div">
   <div class="row main panel panel-default">
     <div class="panel-heading">
@@ -22,7 +29,6 @@
         </div>
     </div>
     <?php echo form_open('User/user_login_process'); ?>
-    <?php echo validation_errors(); ?>
     <div class="main-login main-center panel-body">
       <form class="form-horizontal" method="post" action="#">
         

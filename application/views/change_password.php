@@ -9,11 +9,20 @@
     <div class="main-login main-center panel-body">
       <form class="form-horizontal" method="post" action="#">
         <div class="form-group">
+          <label for="email" class="cols-sm-2 control-label">Email</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon glyphicon glyphicon-envelope"></span>
+              <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your email"/>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
           <label for="old" class="cols-sm-2 control-label">Old Password</label>
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon glyphicon glyphicon-envelope"></span>
-              <input type="text" class="form-control" name="old" id="old"  placeholder="Enter your old password"/>
+              <input type="password" class="form-control" name="old" id="old"  placeholder="Enter your old password"/>
             </div>
           </div>
         </div>

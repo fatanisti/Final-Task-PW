@@ -63,3 +63,12 @@ input[type="number"] {
 .navbar-right {
   padding-right: 20px;
 }
+
+#suggest {
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+.tab-content {
+  margin-bottom: 150px;
+}

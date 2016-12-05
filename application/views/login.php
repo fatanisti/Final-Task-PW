@@ -1,23 +1,16 @@
-<?php
-if (isset($logout_message)) {
-  echo "<div class='message'>";
-  echo $logout_message;
-  echo "</div>";
-}
-?>
-<?php
-if (isset($message_display)) {
-  echo "<div class='alert alert-success text-center'>";
-  echo $message_display;
-  echo "</div>";
-}
-?>
 <?php if (isset($_SESSION['message_display'])): ?>
-  <div class="container">
-    <div class="alert alert-danger text-center">
+  <?php if ($_SESSION['message_display'] === "Anda Berhasil Logout"): ?>
+    <div class="alert alert-success text-center">
       <?php echo $_SESSION['message_display']; ?>
     </div>
   </div>
+  <?php else: ?> 
+    <div class="container">
+      <div class="alert alert-danger text-center">
+        <?php echo $_SESSION['message_display']; ?>
+      </div>
+    </div>
+  <?php endif ?>
   <?php echo validation_errors(); ?>
   <?php session_destroy(); ?>  
 <?php endif ?>

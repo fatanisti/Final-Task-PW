@@ -56,5 +56,5 @@ $route['login'] = 'User/user_login';
 $route['signup'] = 'User/user_registration_show';
 $route['coba1'] = 'User/user';
 $route['coba2'] = 'User/sell';
-$route['coba3'] = 'User/cp';
+$route['coba3'] = 'User/cp_index';
 $route['logout'] = 'User/logout';

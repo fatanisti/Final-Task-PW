@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Des 2016 pada 09.13
+-- Generation Time: 05 Des 2016 pada 09.04
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -31,6 +31,7 @@ CREATE TABLE `pjs_items` (
   `kategori` varchar(30) NOT NULL,
   `namaBarang` varchar(30) NOT NULL,
   `hargaBarang` varchar(30) NOT NULL,
+  `deskripsiBrg` text CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
   `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

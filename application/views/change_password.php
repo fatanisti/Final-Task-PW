@@ -2,9 +2,10 @@
   <div class="row main panel panel-default">
     <div class="panel-heading">
       <div class="panel-title text-center">
-        <h1 class="title">Sign Up</h1>
+        <h1 class="title">Change Password</h1>
       </div>
     </div> 
+    <?php form_open('User/change_pass'); ?>
     <div class="main-login main-center panel-body">
       <form class="form-horizontal" method="post" action="#">
         <div class="form-group">
@@ -37,10 +38,11 @@
           </div>
         </div>
         <p class="text-center">
-          <a href="<?php echo base_url(); ?>index.php/login" class="btn btn-primary btn-lg">Login</a>
-          <button type="button" class="btn btn-success btn-lg">Register</button>
+          <a href="<?php echo base_url(); ?>index.php/coba1" class="btn btn-danger btn-lg">Cancel</a>
+          <button type="submit" class="btn btn-success btn-lg">Change Password</button>
         </p>
       </form>
+      <?php form_close(); ?>
     </div>
     <?php if (validation_errors()): ?>
       <div class="alert alert-danger" role="alert">

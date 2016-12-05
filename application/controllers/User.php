@@ -39,6 +39,8 @@ class User extends CI_Controller {
     // Validasi dan simpan data registrasi ke dalam database
     public function reg_user()
 	{
+        
+
 	    $this->form_validation->set_rules('user_name', 'Username', 'required|is_unique');
 	    $this->form_validation->set_rules('user_pass', 'Password', 'required|min_length[6];');
 	    $this->form_validation->set_rules('confirm', 'Confirm Password', 'required');
@@ -70,8 +72,22 @@ class User extends CI_Controller {
     // Check for user login process
     public function user_login_process() {
 
-        $this->form_validation->set_rules('name', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $val_login = array(
+                            array(
+                                'field' => 'name',
+                                'label' => 'Username',
+                                'rules' => 'required',
+                                 'errors' => array('required' =>'Anda harus mengisi %s.'),
+                            ),
+                            array(
+                                'field' => 'password',
+                                'label' => 'Password',
+                                'rules' => 'required',
+                                'errors' => array('required' =>'Anda harus mengisi %s.'),
+                            ),
+  
+                    );
+        $this->form_validation->set_rules($val_login);
 
         if ($this->form_validation->run() == FALSE) {
                 

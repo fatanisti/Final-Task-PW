@@ -107,12 +107,9 @@ class User extends CI_Controller {
     }
 
     public function logout() {
-        $sess_array = array('user_name' => '');
-        $this->session->unset_userdata($sess_array);
-        $insert['message_display'] = 'Anda telah berhasil logout.';
-        $this->load->view('header');
-        $this->load->view('login', $insert);
-        $this->load->view('footer');
+        $data = array('message_display' => 'Anda Berhasil Logout');        
+        $this->session->set_userdata( $data );
+        redirect('login');
     }
 
     public function user()
@@ -133,6 +130,12 @@ class User extends CI_Controller {
     {
         $this->load->view('header');
         $this->load->view('change_password');
+        $this->load->view('footer');
+    }
+    public function detail()
+    {
+        $this->load->view('header');
+        $this->load->view('detail');
         $this->load->view('footer');
     }
 }

@@ -1,4 +1,9 @@
-<div class="container center_div">
+<?php 
+if (!isset($_SESSION['user_name'])) {
+	redirect('');
+}
+ ?>
+ <div class="container center_div">
 	<form action="#" class="form-horizontal">
 		<div class="form-group">
 			<label for="images" class="cols-sm-2 control-label">Images</label>

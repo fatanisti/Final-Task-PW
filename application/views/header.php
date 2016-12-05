@@ -11,6 +11,7 @@ $this->load->library('session');
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/js/user.js"></script>
   </head>
 <body>
 
@@ -21,13 +22,15 @@ $this->load->library('session');
   </div>
 </div>
 
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="144">
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="141.3">
     <ul class="nav navbar-nav"">
       <li><a href="<?php echo base_url(); ?>"><span class="glyphicon glyphicon-home"></span></a></li>
       <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
     <span class="caret"></span></a>
     <ul class="dropdown-menu">
+      <li class="text-center"><h3>Category</h3></li>
+      <li class="divider" role="separator"></li>
       <li><a href="menswear.html">Menswear</a></li>
       <li><a href="womenswear.html">Womenswear</a></li>
       <li><a href="dress.html">Dress</a></li>
@@ -42,7 +45,7 @@ $this->load->library('session');
     <ul class="nav navbar-nav navbar-right">
       <?php if (isset($_SESSION['user_name'])): ?>
         <li>
-          <a href="<?php echo base_url(); ?>.index.php/coba1">
+          <a href="<?php echo base_url(); ?>index.php/coba1">
             <span class="glyphicon glyphicon-user"></span>
             <?php echo " ".$_SESSION['user_name']." "; ?>
           </a>

@@ -1,3 +1,8 @@
+<?php 
+if (!isset($_SESSION['user_name'])) {
+	redirect('');
+}
+ ?>
 <div class="container-fluid">
 	<div class="panel text-center" id="user_panel">
 		<div class="panel-heading">

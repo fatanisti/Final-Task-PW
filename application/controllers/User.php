@@ -39,63 +39,6 @@ class User extends CI_Controller {
     // Validasi dan simpan data registrasi ke dalam database
     public function reg_user()
 	{
-<<<<<<< HEAD
-        $val_reg = array(
-                            array(
-                                'field' => 'user_name',
-                                'label' => 'Username',
-                                'rules' => 'required|is_unique[pjs_users.user_name]',
-                                 'errors' => array(
-                                            'required' =>'Anda harus mengisi %s.',
-                                            'is_unique' => '%s sudah dipakai'
-                                            ),
-                            ),
-                            array(
-                                'field' => 'user_pass',
-                                'label' => 'Password',
-                                'rules' => 'required|min_length[6]',
-                                'errors' => array(
-                                            'required' =>'Anda harus mengisi %s.',
-                                             ),
-                            ),
-                            array(
-                                'field' => 'confirm',
-                                'label' => 'Konfirmasi Password',
-                                'rules' => 'required|matches[user_pass]',
-                                'errors' => array(
-                                            'required' =>'Anda harus mengisi %s.',
-                                             ),
-                            ),
-                            array(
-                                'field' => 'first_name',
-                                'label' => 'First Name',
-                                'rules' => 'required',
-                                'errors' => array(
-                                            'required' =>'Anda harus mengisi %s.'
-                                            ),
-                            ),
-                            array(
-                                'field' => 'last_name',
-                                'label' => 'Last Name',
-                                'rules' => 'required',
-                                'errors' => array(
-                                            'required' =>'Anda harus mengisi %s.'
-                                            ),
-                            ),
-                            array(
-                                'field' => 'user_email',
-                                'label' => 'Email',
-                                'rules' => 'required|is_unique[pjs_users.user_email]',
-                                 'errors' => array(
-                                            'required' =>'Anda harus mengisi %s.',
-                                            ),
-                            )
-  
-                    );
-||||||| merged common ancestors
-        
-=======
-       
         $val_reg = array(
                             array(
                                 'field' => 'user_name',
@@ -140,26 +83,9 @@ class User extends CI_Controller {
                             ),
   
                     );
->>>>>>> 49c05bbbb4abba163cfdbf8e61d080156a68cae9
 
-<<<<<<< HEAD
-	    //$this->form_validation->set_rules('user_name', 'Username', 'required|is_unique');
-	    //$this->form_validation->set_rules('user_pass', 'Password', 'required|min_length[6];');
-	    //$this->form_validation->set_rules('confirm', 'Confirm Password', 'required');
-	    //$this->form_validation->set_rules('first_name', 'Nama Depan', 'required');
-	    //$this->form_validation->set_rules('last_name', 'Nama Belakang', 'required');
-	   // $this->form_validation->set_rules('user_email', 'Email', 'required|is_unique');
         $this->form_validation->set_rules($val_reg);
-||||||| merged common ancestors
-	    $this->form_validation->set_rules('user_name', 'Username', 'required|is_unique');
-	    $this->form_validation->set_rules('user_pass', 'Password', 'required|min_length[6];');
-	    $this->form_validation->set_rules('confirm', 'Confirm Password', 'required');
-	    $this->form_validation->set_rules('first_name', 'Nama Depan', 'required');
-	    $this->form_validation->set_rules('last_name', 'Nama Belakang', 'required');
-	    $this->form_validation->set_rules('user_email', 'Email', 'required|is_unique');
-=======
-	    $this->form_validation->set_rules($val_reg);
->>>>>>> 49c05bbbb4abba163cfdbf8e61d080156a68cae9
+
 
 	    if ($this->form_validation->run() == FALSE) {
 	        $this->load->view('header');
@@ -236,16 +162,9 @@ class User extends CI_Controller {
     }
 
     public function logout() {
-<<<<<<< HEAD
-        $sess_array = array('user_name' => '');
-        $this->session->set_userdata($sess_array);
-||||||| merged common ancestors
-        $sess_array = array('user_name' => '');
-        $this->session->unset_userdata($sess_array);
-=======
+
         $sess_array = array('user_name' => '', );
         $this->session->userdata($sess_array);
->>>>>>> 49c05bbbb4abba163cfdbf8e61d080156a68cae9
         $this->session->sess_destroy();
         $data = array('message_display' => 'Anda Berhasil Logout');        
         $this->session->set_userdata( $data );
@@ -266,7 +185,7 @@ class User extends CI_Controller {
         $this->load->view('footer');
     }
 
-    public function cp()
+   
     public function cp_index()
     {
         $this->load->view('header');
@@ -277,34 +196,36 @@ class User extends CI_Controller {
     public function change_pass()
     {
         $val_change = array(
-                            array('field' => 'old', 
-                                  'label' => 'Password lama',
-                                  'rules' => 'required',
-                                  'errors' => array(
-                                                'required' => '%s harus diisi'),
-                            ),
-                            array(
-                                'field' => 'new' ,
-                                'label' => 'Password baru',
-                                'rules' => 'required|min_length[6]',
-                                'errors' => array('min_lenght' => 'Password minimal 6 karakter'),
-                            ),
-                            array('field' => 'confirm',
-                                    'label' => 'Konfirmasi Password Baru',
-                                    'rules' => 'required|matches[new]',
-                                    'errors' => array('matches' => 'Konfirmasi password harus sesuai password' , ),
-                                )
+                array('field' => 'old', 
+                      'label' => 'Password lama',
+                      'rules' => 'required',
+                      'errors' => array(
+                                    'required' => '%s harus diisi'),
+                ),
+                array(
+                    'field' => 'new' ,
+                    'label' => 'Password baru',
+                    'rules' => 'required|min_length[6]',
+                    'errors' => array('min_lenght' => 'Password minimal 6 karakter'),
+                ),
+                array('field' => 'confirm',
+                        'label' => 'Konfirmasi Password Baru',
+                        'rules' => 'required|matches[new]',
+                        'errors' => array('matches' => 'Konfirmasi password harus sesuai password' , ),
+                    )
 
                     );
         $this->form_validation->set_rules($val_change);
 
         if ($this->form_validation->run() == FALSE) {
+            $this->load->view('header');
             $this->load->view('change_password');
+            $this->load->view('footer');
         } else {
             $old = array('user_pass' => md5($this->input->post('old')) );
-            $cek_old = $this->login_database->check_pass($old);
-            if ($cek_old == FALSE) {
-               // $this->session->set_flashdata('error', 'Password Lama tidak sesuai');
+            $cek_old = $this->login_database->check_pass();
+            if ($old != $cek_old) {
+               //$this->session->set_flashdata('error', 'Password Lama tidak sesuai');
                 $this->load->view('header');
                 $this->load->view('change_password');
                 $this->load->view('footer');
@@ -319,6 +240,7 @@ class User extends CI_Controller {
         }
     }
 
+        
     public function detail()
     {
         $this->load->view('header');

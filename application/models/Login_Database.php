@@ -15,7 +15,7 @@ Class Login_Database extends CI_Model {
         $this->db->select('*');
         $this->db->from('pjs_users');
         $this->db->where($condition);
-        $this->db->limit(1);
+        //$this->db->limit(1);
         $query = $this->db->get();
         if ($query->num_rows() == 1) {
             return true;
@@ -30,7 +30,7 @@ Class Login_Database extends CI_Model {
         $this->db->select('*');
         $this->db->from('pjs_users');
         $this->db->where($condition);
-        $this->db->limit(1);
+        //$this->db->limit(1);
         $query = $this->db->get();
 
         if ($query->num_rows() == 1) {

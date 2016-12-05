@@ -39,14 +39,66 @@ class User extends CI_Controller {
     // Validasi dan simpan data registrasi ke dalam database
     public function reg_user()
 	{
-        
+        $val_reg = array(
+                            array(
+                                'field' => 'user_name',
+                                'label' => 'Username',
+                                'rules' => 'required|is_unique[pjs_users.user_name]',
+                                 'errors' => array(
+                                            'required' =>'Anda harus mengisi %s.',
+                                            'is_unique' => '%s sudah dipakai'
+                                            ),
+                            ),
+                            array(
+                                'field' => 'user_pass',
+                                'label' => 'Password',
+                                'rules' => 'required|min_length[6]',
+                                'errors' => array(
+                                            'required' =>'Anda harus mengisi %s.',
+                                             ),
+                            ),
+                            array(
+                                'field' => 'confirm',
+                                'label' => 'Konfirmasi Password',
+                                'rules' => 'required|matches[user_pass]',
+                                'errors' => array(
+                                            'required' =>'Anda harus mengisi %s.',
+                                             ),
+                            ),
+                            array(
+                                'field' => 'first_name',
+                                'label' => 'First Name',
+                                'rules' => 'required',
+                                'errors' => array(
+                                            'required' =>'Anda harus mengisi %s.'
+                                            ),
+                            ),
+                            array(
+                                'field' => 'last_name',
+                                'label' => 'Last Name',
+                                'rules' => 'required',
+                                'errors' => array(
+                                            'required' =>'Anda harus mengisi %s.'
+                                            ),
+                            ),
+                            array(
+                                'field' => 'user_email',
+                                'label' => 'Email',
+                                'rules' => 'required|is_unique[pjs_users.user_email]',
+                                 'errors' => array(
+                                            'required' =>'Anda harus mengisi %s.',
+                                            ),
+                            )
+  
+                    );
 
-	    $this->form_validation->set_rules('user_name', 'Username', 'required|is_unique');
-	    $this->form_validation->set_rules('user_pass', 'Password', 'required|min_length[6];');
-	    $this->form_validation->set_rules('confirm', 'Confirm Password', 'required');
-	    $this->form_validation->set_rules('first_name', 'Nama Depan', 'required');
-	    $this->form_validation->set_rules('last_name', 'Nama Belakang', 'required');
-	    $this->form_validation->set_rules('user_email', 'Email', 'required|is_unique');
+	    //$this->form_validation->set_rules('user_name', 'Username', 'required|is_unique');
+	    //$this->form_validation->set_rules('user_pass', 'Password', 'required|min_length[6];');
+	    //$this->form_validation->set_rules('confirm', 'Confirm Password', 'required');
+	    //$this->form_validation->set_rules('first_name', 'Nama Depan', 'required');
+	    //$this->form_validation->set_rules('last_name', 'Nama Belakang', 'required');
+	   // $this->form_validation->set_rules('user_email', 'Email', 'required|is_unique');
+        $this->form_validation->set_rules($val_reg);
 
 	    if ($this->form_validation->run() == FALSE) {
 	        $this->load->view('header');
@@ -124,7 +176,7 @@ class User extends CI_Controller {
 
     public function logout() {
         $sess_array = array('user_name' => '');
-        $this->session->unset_userdata($sess_array);
+        $this->session->set_userdata($sess_array);
         $this->session->sess_destroy();
         $insert['message_display'] = 'Anda telah berhasil logout.';
         $this->load->view('header');

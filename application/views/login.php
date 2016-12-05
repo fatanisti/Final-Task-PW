@@ -29,7 +29,7 @@ if (isset($message_display)) {
         </div>
     </div>
     <?php echo form_open('User/user_login_process'); ?>
-    
+    <?php echo validation_errors(); ?>
     <div class="main-login main-center panel-body">
       <form class="form-horizontal" method="post" action="#">
         

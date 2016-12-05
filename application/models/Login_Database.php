@@ -1,4 +1,3 @@
-
 <?php
 
 Class Login_Database extends CI_Model {
@@ -7,7 +6,6 @@ Class Login_Database extends CI_Model {
     function __construct()
     {
         $this->load->database();
-        $this->load->library('session');
     }
 
     public function login($data) {
@@ -44,26 +42,6 @@ Class Login_Database extends CI_Model {
     public function new_user($data)
     {
         $this->db->insert('pjs_users',$data);
-    }
-
-    public function check_pass($old) {
-        //$this->db->select('*');
-        //$this->db->from('pjs_users');
-        $this->db->where('pjs_users.user_pass',$old);
-        $query = $this->db->get('pjs_users');
-        if ($query->num_rows() == 1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function update_pass($username,$data)
-    {
-        $this->db->select('*');
-        $this->db->from('pjs_users');
-        $this->db->where('user_name',$username);
-        $this->db->update('pjs_users',$data);
     }
 }
 

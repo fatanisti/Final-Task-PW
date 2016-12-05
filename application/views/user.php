@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_name'])) {
 		<div class="panel-body">
 			<p>INI NAMA</p>
 			<p>INI EMAIL</p>
-			<a href="#" class="btn btn-link">GANTI PASSWORD</a>
+			<a href="<?php echo base_url(); ?>index.php/coba3" class="btn btn-link">GANTI PASSWORD</a>
 		</div>
 	</div>
 	<div class="container" style="float: left; width: 80%; padding-left: 50px;">

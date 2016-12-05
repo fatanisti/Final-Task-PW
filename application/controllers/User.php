@@ -184,12 +184,58 @@ class User extends CI_Controller {
         $this->load->view('footer');
     }
 
-    public function cp()
+    public function cp_index()
     {
         $this->load->view('header');
         $this->load->view('change_password');
         $this->load->view('footer');
     }
+
+    public function change_pass()
+    {
+        $val_change = array(
+                            array('field' => 'old', 
+                                  'label' => 'Password lama',
+                                  'rules' => 'required',
+                                  'errors' => array(
+                                                'required' => '%s harus diisi'),
+                            ),
+                            array(
+                                'field' => 'new' ,
+                                'label' => 'Password baru',
+                                'rules' => 'required|min_length[6]',
+                                'errors' => array('min_lenght' => 'Password minimal 6 karakter'),
+                            ),
+                            array('field' => 'confirm',
+                                    'label' => 'Konfirmasi Password Baru',
+                                    'rules' => 'required|matches[new]',
+                                    'errors' => array('matches' => 'Konfirmasi password harus sesuai password' , ),
+                                )
+
+                    );
+        $this->form_validation->set_rules($val_change);
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('change_password');
+        } else {
+            $old = array('user_pass' => md5($this->input->post('old')) );
+            $cek_old = $this->login_database->check_pass($old);
+            if ($cek_old == FALSE) {
+               // $this->session->set_flashdata('error', 'Password Lama tidak sesuai');
+                $this->load->view('header');
+                $this->load->view('change_password');
+                $this->load->view('footer');
+            }else{
+                $username = $this->session->userdata($session_data['user_name']);
+                $data = array('user_pass' => md5($this->input->post('new')) );
+                $this->login_database->update_pass($username,$data);
+                $this->load->view('header');
+                $this->load->view('user');
+                $this->load->view('footer'); 
+            }
+        }
+    }
+
     public function detail()
     {
         $this->load->view('header');

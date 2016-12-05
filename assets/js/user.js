@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	$('.dropdown-toggle').click(function() {
-		$('.dropdown-menu').slideDown('fast');
+		$('.dropdown-menu').slideToggle('fast');
 	});
 	$('.dropdown-toggle').blur(function () {
-		$('.dropdown-menu')slideUp('fast')
+		$('.dropdown-menu').slideUp('fast')
 	});
 })

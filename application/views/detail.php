@@ -9,7 +9,7 @@
     <a href="#" class="btn btn-link">GANTI PASSWORD</a>
   </div>
   <div class="container" style="float: left; width: 80%; padding-left: 50px;">
-    <table class="table table-striped">
+    <table class="table table-striped pull-left">
       <tr>
         <td>NAMA BARANG</td>
         <td>:</td>
@@ -25,17 +25,62 @@
         <td>:</td>
         <td>BLABLA</td>
       </tr>
-
     </table>
+    <a href="
+      <?php 
+      if (isset($_SESSION['user_name'])) {
+        echo base_url()."index.php/user/user#cart";
+      } else {
+        echo base_url()."index.php/login";
+      }
+      ?>
+    " class="btn btn-success btn-lg pull-right"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a>
+    <div class="container-fluid text-center" id="suggest" >
+      <table class="table">
+        <tr>
+          <td>
+            <img src="<?php echo base_url(); ?>assets/img/kaos.jpg" alt="" height="200px">
+            <p>Titit</p>
+          </td>
+         <td>
+            <img src="<?php echo base_url(); ?>assets/img/kaos.jpg" alt="" height="200px">
+            <p>Titit</p>
+          </td>
+         <td>
+            <img src="<?php echo base_url(); ?>assets/img/kaos.jpg" alt="" height="200px">
+            <p>Titit</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="<?php echo base_url(); ?>assets/img/kaos.jpg" alt="" height="200px">
+            <p>Titit</p>
+          </td>
+         <td>
+            <img src="<?php echo base_url(); ?>assets/img/kaos.jpg" alt="" height="200px">
+            <p>Titit</p>
+          </td>
+         <td>
+            <img src="<?php echo base_url(); ?>assets/img/kaos.jpg" alt="" height="200px">
+            <p>Titit</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="<?php echo base_url(); ?>assets/img/kaos.jpg" alt="" height="200px">
+            <p>Titit</p>
+          </td>
+         <td>
+            <img src="<?php echo base_url(); ?>assets/img/kaos.jpg" alt="" height="200px">
+            <p>Titit</p>
+          </td>
+         <td>
+            <img src="<?php echo base_url(); ?>assets/img/kaos.jpg" alt="" height="200px">
+            <p>Titit</p>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
 </div>
-
-<script type="text/javascript">
-  $('#mainImg').elevateZoom({
-    zoomWindowFadeIn: 500,
-    zoomWindowFadeOut: 500,
-    lensFadeIn: 500,
-    lensFadeOut: 500
-  });
-</script>

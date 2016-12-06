@@ -2,6 +2,9 @@
 if (!isset($_SESSION['user_name'])) {
 	redirect('');
 }
+
+echo var_dump($item);
+die();
  ?>
 <div class="container-fluid">
 	<div class="panel text-center" id="user_panel">

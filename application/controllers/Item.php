@@ -72,7 +72,6 @@ Class Item extends CI_Controller {
 	}
 
 	 
-
 	 public function show_category($cat)
 	 {
 		if ($cat === NULL) {
@@ -85,6 +84,22 @@ Class Item extends CI_Controller {
 			$data['item'] = $this->Item_Database->get_kategori($cat);
 			$this->load->view('header');
 			$this->load->view('category',$data);
+			$this->load->view('footer');			
+		}
+	}
+
+	public function show_user($username)
+	 {
+		if ($username === NULL) {
+			$this->load->view('header');
+			$this->load->view('layout');
+			$this->load->view('footer');
+		}
+		else
+		{
+			$data['item'] = $this->Item_Database->get_item_user($username);
+			$this->load->view('header');
+			$this->load->view('user',$data);
 			$this->load->view('footer');			
 		}
 	}

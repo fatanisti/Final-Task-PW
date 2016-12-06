@@ -65,34 +65,34 @@
     <div class="col-md-4">
       <div class="panel panel-primary">
         <div class="panel-heading">Menswear</div></a>
-        <div class="panel-body vertical-center">
+        <div class="panel-body vertical-center" style="max-height: 300px; min-height: 300px; position: relative; overflow: hidden">
           <a href='menswear.html'>
-            <img src="<?php echo base_url(); ?>assets/img/images.jpg" class="img-responsive" style="width:100%" alt="Image">
+            <img src="<?php echo base_url(); ?>assets/img/images.jpg" class="img-responsive" style="width:100%; height: 100%" alt="Image">
           </a>
         </div>
-        <div class="panel-footer">Buy 3 get 1 free</div>
+        <div class="panel-footer" style="margin-top: 20px">Buy 3 get 1 free</div>
       </div>
     </div>
     <div class="col-md-4"> 
       <div class="panel panel-danger">
         <div class="panel-heading">Womenswear</div>
-        <div class="panel-body vertical-center">
+        <div class="panel-body vertical-center" style="max-height: 300px; min-height: 300px; position: relative; overflow: hidden">
           <a href='womenswear.html'>
-            <img src="<?php echo base_url(); ?>assets/img/women.jpg" class="img-responsive" style="width:100%" alt="Image">
+            <img src="<?php echo base_url(); ?>assets/img/women.jpg" class="img-responsive" style="width:100%; height: 100%" alt="Image">
           </a>
         </div>
-        <div class="panel-footer">Buy 3 get 1 free</div>
+        <div class="panel-footer" style="margin-top: 20px">Buy 3 get 1 free</div>
       </div>
     </div>
     <div class="col-md-4"> 
       <div class="panel panel-success">
         <div class="panel-heading">Dress</div>
-        <div class="panel-body vertical-center">
+        <div class="panel-body vertical-center" style="max-height: 300px; min-height: 300px; position: relative; overflow: hidden">
           <a href='dress.html'>
-            <img src="<?php echo base_url(); ?>assets/img/korean dress.jpg" class="img-responsive" style="width:100%" alt="Image">
+            <img src="<?php echo base_url(); ?>assets/img/korean dress.jpg" class="img-responsive" style="width:100%; height: 100%" alt="Image">
           </a>
         </div>
-        <div class="panel-footer">Buy 3 get 1 free</div>
+        <div class="panel-footer" style="margin-top: 20px">Buy 3 get 1 free</div>
       </div>
     </div>
   </div>
@@ -103,34 +103,34 @@
     <div class="col-md-4">
       <div class="panel panel-info">
         <div class="panel-heading">Shoes for men</div>
-        <div class="panel-body vertical-center">
+        <div class="panel-body vertical-center" style="max-height: 300px; min-height: 300px; position: relative; overflow: hidden">
           <a href='shoesformen.html'>
-            <img src="<?php echo base_url(); ?>assets/img/shoes-for-men.jpg" class="img-responsive" style="width:100%" alt="Image">
+            <img src="<?php echo base_url(); ?>assets/img/shoes-for-men.jpg" class="img-responsive" style="width:100%; height: 100%" alt="Image">
           </a>
         </div>
-        <div class="panel-footer">Buy 3 get 1 free</div>
+        <div class="panel-footer" style="margin-top: 20px">Buy 3 get 1 free</div>
       </div>
     </div>
     <div class="col-md-4"> 
       <div class="panel panel-warning">
         <div class="panel-heading">Shoes for women</div>
-        <div class="panel-body vertical-center">
+        <div class="panel-body vertical-center" style="max-height: 300px; min-height: 300px; position: relative; overflow: hidden">
           <a href='shoesforwomen'>
-            <img src="<?php echo base_url(); ?>assets/img/shoes-for-girls.jpg" class="img-responsive" style="width:100%" alt="Image">
+            <img src="<?php echo base_url(); ?>assets/img/shoes-for-girls.jpg" class="img-responsive" style="width:100%; height: 100%" alt="Image">
           </a>
         </div>
-        <div class="panel-footer">Buy 3 get 1 free</div>
+        <div class="panel-footer" style="margin-top: 20px">Buy 3 get 1 free</div>
       </div>
     </div>
     <div class="col-md-4"> 
       <div class="panel panel-danger">
         <div class="panel-heading">Accessories</div>
-        <div class="panel-body vertical-center">
+        <div class="panel-body vertical-center" style="max-height: 300px; min-height: 300px; position: relative; overflow: hidden">
           <a href='accessories'>
-            <img src="<?php echo base_url(); ?>assets/img/kalung.jpg" class="img-responsive" style="width:100%" alt="Image">
+            <img src="<?php echo base_url(); ?>assets/img/kalung.jpg" class="img-responsive" style="width:100%; height: 100%" alt="Image">
           </a>
         </div>
-        <div class="panel-footer">Buy 3 get 1 free</div>
+        <div class="panel-footer" style="margin-top: 20px">Buy 3 get 1 free</div>
       </div>
     </div>
   </div>

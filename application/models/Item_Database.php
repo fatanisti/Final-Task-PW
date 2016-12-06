@@ -33,7 +33,8 @@ class Item_Database extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('pjs_items');
 		$this->db->where($condition);
-		return $this->db->get();
+		$query = $this->db->get();
+		return $query->result();
 	}
 }
 

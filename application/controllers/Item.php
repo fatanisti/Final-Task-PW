@@ -50,7 +50,7 @@ Class Item extends CI_Controller {
 	    }else{
 	    	//$username = $this->session->userdata('user_name');s
 	        $data = array(
-	        	//'user_name' => $this->session->userdata('user_name'),
+	        	'user_name' => $this->session->userdata('user_name'),
                 'namaBarang' => $this->input->post('nama_barang') ,
                 'kategori' => $this->input->post('kategori'),
                 'deskripsiBrg' =>$this->input->post('desc'),           
@@ -64,7 +64,25 @@ Class Item extends CI_Controller {
 	        $this->load->view('footer');
 	    }
 	}
-	
+
+	 
+
+	 public function show_category()
+	 {
+	 	$cat=$this->get('cat');
+		if ($cat === NULL) {
+			$this->load->view('header');
+			$this->load->view('layout');
+			$this->load->view('footer');
+		}
+		else
+		{
+			$data = array($this->Item_Database->get_kategori($cat));
+			$this->load->view('header');
+			$this->load->view('category',$data);
+			$this->load->view('footer');			
+		}
+	}
 }
 
 ?>

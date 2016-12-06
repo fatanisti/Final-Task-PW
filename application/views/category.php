@@ -1,3 +1,7 @@
+<?php echo var_dump($item);
+      die();
+ ?>
+
 <div class="container">
   <h2><center>Menswear</h2></center><br>
   <div class="row">

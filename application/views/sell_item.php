@@ -1,11 +1,12 @@
 <?php 
+$this->load->library('session');
 if (!isset($_SESSION['user_name'])) {
-	redirect('');
+	redirect('login');
 }
  ?>
  <div class="container center_div">
- 	<?php echo form_open('Item/jual_barang'); ?>
-	<form action="#" class="form-horizontal" method="post">
+ 	<?php echo form_open_multipart('Item/jual_barang'); ?>
+	<form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="images" class="cols-sm-2 control-label">Images</label>
 			<div class="cols-sm-10">
@@ -30,8 +31,8 @@ if (!isset($_SESSION['user_name'])) {
 						<option value="Menswear">Menswear</option>
 						<option value="Womenswear">Womenswear</option>
 						<option value="Dress">Dress</option>
-						<option value="Shoes For Men">Shoes For Men</option>
-						<option value="Shoes For Womem">Shoes For Womem</option>
+						<option value="ShoesMen">Shoes For Men</option>
+						<option value="ShoesWomem">Shoes For Womem</option>
 						<option value="Accessories">Accessories</option>
 					</select>
 				</div>

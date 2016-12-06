@@ -5,7 +5,7 @@
         <h1 class="title">Change Password</h1>
       </div>
     </div> 
-    <?php form_open('User/change_pass'); ?>
+    <?php echo form_open('User/change_pass'); ?>
     <div class="main-login main-center panel-body">
       <form class="form-horizontal" method="post" action="#">
         <div class="form-group">
@@ -51,7 +51,7 @@
           <button type="submit" class="btn btn-success btn-lg">Change Password</button>
         </p>
       </form>
-      <?php form_close(); ?>
+      <?php echo form_close(); ?>
     </div>
     <?php if (validation_errors()): ?>
       <div class="alert alert-danger" role="alert">

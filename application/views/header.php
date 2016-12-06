@@ -46,7 +46,7 @@ $this->load->library('session');
     <ul class="nav navbar-nav navbar-right">
       <?php if (isset($_SESSION['user_name'])): ?>
         <li>
-          <a href="<?php echo base_url(); ?>index.php/coba1">
+          <a href="<?php echo base_url(); ?>index.php/coba1/<?php echo $_SESSION['user_name']." "; ?>">
             <span class="glyphicon glyphicon-user"></span>
             <?php echo " ".$_SESSION['user_name']." "; ?>
           </a>

@@ -29,11 +29,22 @@ class Item_Database extends CI_Model {
 
 	public function get_kategori($kategori)
 	{
-		$condition = "kategori =" . "'" . $kategori;
+		$condition = "kategori =" . "'" . $kategori."'";
 		$this->db->select('*');
-		$this->db->from('pjs-items');
+		$this->db->from('pjs_items');
 		$this->db->where($condition);
-		return $this->db->get();
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function get_item_user($username)
+	{
+		$condition = "user_name =" . "'" . $username."'";
+		$this->db->select('*');
+		$this->db->from('pjs_items');
+		$this->db->where($condition);
+		$query = $this->db->get();
+		return $query->result();
 	}
 }
 

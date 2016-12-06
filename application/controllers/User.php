@@ -76,7 +76,7 @@ class User extends CI_Controller {
                             ),
                             array(
                                 'field' => 'user_email',
-                                'label' => 'Emai;',
+                                'label' => 'Email',
                                 'rules' => 'required|is_unique[pjs_users.user_email]',
                                  'errors' => array('required' =>'Anda harus mengisi %s.',
                                                     'is_unique' => '%s sudah dipakai'),
@@ -191,7 +191,7 @@ class User extends CI_Controller {
                 array(
                     'field' =>'email' ,
                     'label' => 'Email',
-                    'rules' =>'required',z
+                    'rules' =>'required',
                     ),
                 array('field' => 'old', 
                       'label' => 'Password lama',
@@ -228,9 +228,11 @@ class User extends CI_Controller {
                 $this->load->view('footer');
             }else{
                 //$username = $this->session->userdata($session_data['user_name']);
-                $data = array('user_pass' => $this->input->post('new'));
+                $data = array('user_pass' => md5($this->input->post('new')));
                 $this->login_database->update_pass($data,$mail);
+                $this->load->view('header');
                 $this->load->view('layout');
+                $this->load->view('footer');
             }
             
         }

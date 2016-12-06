@@ -66,7 +66,7 @@
       <div class="panel panel-primary">
         <div class="panel-heading">Menswear</div></a>
         <div class="panel-body vertical-center" style="max-height: 300px; min-height: 300px; position: relative; overflow: hidden">
-          <a href='menswear.html'>
+          <a href='<?php echo base_url(); ?>index.php/cat/Menswear'>
             <img src="<?php echo base_url(); ?>assets/img/images.jpg" class="img-responsive" style="width:100%; height: 100%" alt="Image">
           </a>
         </div>

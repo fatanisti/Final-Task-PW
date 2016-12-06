@@ -1,19 +1,20 @@
 <?php 
+$this->load->library('session');
 if (!isset($_SESSION['user_name'])) {
-	redirect('');
+	redirect('login');
 }
  ?>
  <div class="container center_div">
- 	<?php form_open('Item/jual_barang'); ?>
+ 	<?php echo form_open('Item/jual_barang'); ?>
 	<form action="#" class="form-horizontal" method="post">
-		<div class="form-group">
+		<!--<div class="form-group">
 			<label for="images" class="cols-sm-2 control-label">Images</label>
 			<div class="cols-sm-10">
 				<div class="input-group">
 					<input type="file" name="images" accept=".jpg,.png,.bmp">
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<div class="form-group">
 			<label for="nama_barang" class="cols-sm-2">Nama Barang</label>
 			<div class="cols-sm-10">
@@ -26,12 +27,12 @@ if (!isset($_SESSION['user_name'])) {
 			<label for="kategori" class="cols-sm-2">Kategori</label>
 			<div class="cols-sm-10">
 				<div class="input-group">
-					<select>
+					<select name="kategori">
 						<option value="Menswear">Menswear</option>
 						<option value="Womenswear">Womenswear</option>
 						<option value="Dress">Dress</option>
-						<option value="Shoes For Men">Shoes For Men</option>
-						<option value="Shoes For Womem">Shoes For Womem</option>
+						<option value="ShoesMen">Shoes For Men</option>
+						<option value="ShoesWomem">Shoes For Womem</option>
 						<option value="Accessories">Accessories</option>
 					</select>
 				</div>
@@ -59,5 +60,6 @@ if (!isset($_SESSION['user_name'])) {
 		</p>
 		<p></p>
 	</form>
-	<?php form_close(); ?>
+	<?php echo form_close(); ?>
+
 </div>

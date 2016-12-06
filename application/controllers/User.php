@@ -76,7 +76,7 @@ class User extends CI_Controller {
                             ),
                             array(
                                 'field' => 'user_email',
-                                'label' => 'Emai;',
+                                'label' => 'Email',
                                 'rules' => 'required|is_unique[pjs_users.user_email]',
                                  'errors' => array('required' =>'Anda harus mengisi %s.',
                                                     'is_unique' => '%s sudah dipakai'),

@@ -55,6 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'User/user_login';
 $route['signup'] = 'User/user_registration_show';
 $route['coba1'] = 'User/user';
-$route['coba2'] = 'item/add_items_page';
+$route['coba2'] = 'Item/add_items_page';
 $route['coba3'] = 'User/cp_index';
 $route['logout'] = 'User/logout';

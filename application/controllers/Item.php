@@ -11,6 +11,8 @@ Class Item extends CI_Controller {
 		$this->load->model('Item_Database');
 	}
 
+
+
 	public function add_items_page()
 	{
 		$this->load->view('header');
@@ -20,50 +22,46 @@ Class Item extends CI_Controller {
 
 	public function jual_barang()
 	{
-		$val_reg = array(
-			array(
-	            'field' => 'kategori',
-	            'label' => 'Kategori',
-	            'rules' => 'required',
-	             'errors' => array('required' =>'Anda harus memilih %s.'
-	                                ),
-	        ),
+		$val_sell = array(
             array(
-                'field' => 'namaBarang',
+                'field' => 'nama_barang',
                 'label' => 'Nama Barang',
                 'rules' => 'required',
                  'errors' => array('required' =>'Anda harus mengisi %s.'),
             ),
             array(
-                'field' => 'hargaBarang',
+                'field' => 'harga',
                 'label' => 'Harga',
                 'rules' => 'required',
                 'errors' => array('required' =>'Anda harus mengisi %s.'),
             ),
-            array(
-                'field' => 'deskripsiBrg',
+            /*array(
+                'field' => 'desc',
                 'label' => 'Deskripsi Singkat'
-            ),
+            ),*/
         );
 
-	    $this->form_validation->set_rules($val_reg);
+	    $this->form_validation->set_rules($val_sell);
 
 	    if ($this->form_validation->run() == FALSE) {
 	        $this->load->view('header');
 	        $this->load->view('sell_item');
 	        $this->load->view('footer');
 	    }else{
+	    	//$username = $this->session->userdata('user_name');s
 	        $data = array(
-	        	'user_name' => $this->session->userdata('user_name'),
+	        	//'user_name' => $this->session->userdata('user_name'),
+                'namaBarang' => $this->input->post('nama_barang') ,
                 'kategori' => $this->input->post('kategori'),
-                'namaBarang' => $this->input->post('namaBarang') ,
-                'hargaBarang' =>$this->input->post('hargaBarang'),
-                'deskripsiBrg' =>$this->input->post('deskripsiBrg')           
+                'deskripsiBrg' =>$this->input->post('desc'),           
+                'hargaBarang' =>$this->input->post('harga')
                 ); 
 
 	        $this->Item_Database->insert_item($data);
 
-	        redirect('');
+	        $this->load->view('header');
+	        $this->load->view('layout');
+	        $this->load->view('footer');
 	    }
 	}
 	

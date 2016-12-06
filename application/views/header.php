@@ -28,9 +28,7 @@ $this->load->library('session');
       <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
     <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-      <li class="text-center"><h3>Category</h3></li>
-      <li class="divider" role="separator"></li>
+    <ul class="dropdown-menu nav navbar-nav navbar-inverse">
       <li><a href="menswear.html">Menswear</a></li>
       <li><a href="womenswear.html">Womenswear</a></li>
       <li><a href="dress.html">Dress</a></li>

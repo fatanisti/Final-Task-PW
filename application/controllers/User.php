@@ -196,6 +196,11 @@ class User extends CI_Controller {
     public function change_pass()
     {
         $val_change = array(
+                array(
+                    'field' =>'email' ,
+                    'label' => 'Email',
+                    'rules' =>'required',z
+                    ),
                 array('field' => 'old', 
                       'label' => 'Password lama',
                       'rules' => 'required',
@@ -206,7 +211,7 @@ class User extends CI_Controller {
                     'field' => 'new' ,
                     'label' => 'Password baru',
                     'rules' => 'required|min_length[6]',
-                    'errors' => array('min_lenght' => 'Password minimal 6 karakter'),
+                    'errors' => array('min_length' => 'Password minimal 6 karakter'),
                 ),
                 array('field' => 'confirm',
                         'label' => 'Konfirmasi Password Baru',
@@ -222,17 +227,18 @@ class User extends CI_Controller {
             $this->load->view('change_password');
             $this->load->view('footer');
         } else {
-            $old = array('user_pass' => md5($this->input->post('old')) );
-            $cek_old = $this->login_database->check_pass($old);
-            if ($cek_old != TRUE) {
+            $mail = $this->input->post('email'); 
+            $old = md5($this->input->post('old'));
+            $check = $this->login_database->check_pass($mail,$old);
+            if ($check != true) {
                 $this->load->view('header');
                 $this->load->view('change_password');
                 $this->load->view('footer');
             }else{
                 //$username = $this->session->userdata($session_data['user_name']);
-                $data = array('user_pass' => md5($this->input->post('new')));
-                $this->login_database->update_pass($username,$data);
-                redirect('');
+                $data = array('user_pass' => $this->input->post('new'));
+                $this->login_database->update_pass($data,$mail);
+                $this->load->view('layout');
             }
             
         }

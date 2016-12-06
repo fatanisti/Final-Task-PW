@@ -43,50 +43,29 @@ Class Login_Database extends CI_Model {
     {
         $this->db->insert('pjs_users',$data);
     }
-<<<<<<< HEAD
 
-    public function check_pass($old) {
+    public function check_pass($mail,$old)
+    {
+        $cond = "user_pass =" . "'" . $old . "' AND " . "user_mail =" . "'" . $mail . "'";
         $this->db->select('*');
         $this->db->from('pjs_users');
-        $this->db->where('user_pass',$old);
-        $query = $this->db->get('pjs_users');
+        //$this->db->where('user_pass',$old);
+        $this->db->where($cond);
+        $query = $this->db->get();
         if ($query->num_rows() == 1) {
             return true;
-        } else {
+        }else{
             return false;
         }
     }
 
-    public function update_pass($username,$data)
+    public function update_pass($data,$mail)
     {
-        $this->db->select('*');
-        $this->db->from('pjs_users');
-        $this->db->where('user_name',$username);
-        $this->db->update('pjs_users',$data);
-    }
-||||||| merged common ancestors
-
-    public function check_pass($old) {
-        //$this->db->select('*');
+        $this->db->set($data);
         //$this->db->from('pjs_users');
-        $this->db->where('pjs_users.user_pass',$old);
-        $query = $this->db->get('pjs_users');
-        if ($query->num_rows() == 1) {
-            return true;
-        } else {
-            return false;
-        }
+        $this->db->where('user_email',$mail);
+        $this->db->update('pjs_users');
     }
-
-    public function update_pass($username,$data)
-    {
-        $this->db->select('*');
-        $this->db->from('pjs_users');
-        $this->db->where('user_name',$username);
-        $this->db->update('pjs_users',$data);
-    }
-=======
->>>>>>> 2ab956aca73a6fd87d92187c9d176e2a6fb34525
 }
 
 ?>

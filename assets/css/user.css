@@ -24,6 +24,12 @@ footer {
   width: 25%;
 }
 
+.center_div2 {
+  margin: 0 auto;
+  width: 75%;
+  float: none;
+}
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   width: 70%;

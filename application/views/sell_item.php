@@ -4,7 +4,7 @@ if (!isset($_SESSION['user_name'])) {
 }
  ?>
  <div class="container center_div">
- 	<?php form_open('Item/jual_barang'); ?>
+ 	<?php echo form_open('Item/jual_barang'); ?>
 	<form action="#" class="form-horizontal" method="post">
 		<div class="form-group">
 			<label for="images" class="cols-sm-2 control-label">Images</label>
@@ -15,10 +15,10 @@ if (!isset($_SESSION['user_name'])) {
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="nama_barang" class="cols-sm-2">Nama Barang</label>
+			<label for="namaBarang" class="cols-sm-2">Nama Barang</label>
 			<div class="cols-sm-10">
 				<div class="input-group">
-				<input type="text" name="nama_barang">
+				<input type="text" name="namaBarang">
 				</div>
 			</div>
 		</div>
@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_name'])) {
 			<label for="kategori" class="cols-sm-2">Kategori</label>
 			<div class="cols-sm-10">
 				<div class="input-group">
-					<select>
+					<select name="kategori">
 						<option value="Menswear">Menswear</option>
 						<option value="Womenswear">Womenswear</option>
 						<option value="Dress">Dress</option>
@@ -38,10 +38,10 @@ if (!isset($_SESSION['user_name'])) {
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="desc" class="cols-sm-2">Deskripsi</label>
+			<label for="deskripsiBrg" class="cols-sm-2">Deskripsi</label>
 			<div class="cols-sm-10">
 				<div class="input-group">
-					<input type="text" name="desc">
+					<input type="text" name="deskripsiBrg">
 				</div>
 			</div>
 		</div>
@@ -59,5 +59,5 @@ if (!isset($_SESSION['user_name'])) {
 		</p>
 		<p></p>
 	</form>
-	<?php form_close(); ?>
+	<?php echo form_close(); ?>
 </div>

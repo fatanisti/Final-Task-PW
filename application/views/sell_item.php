@@ -19,7 +19,7 @@ if (!isset($_SESSION['user_name'])) {
 			<label for="namaBarang" class="cols-sm-2">Nama Barang</label>
 			<div class="cols-sm-10">
 				<div class="input-group">
-				<input type="text" name="namaBarang">
+				<input type="text" name="nama_barang">
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['user_name'])) {
 			<label for="deskripsiBrg" class="cols-sm-2">Deskripsi</label>
 			<div class="cols-sm-10">
 				<div class="input-group">
-					<input type="text" name="deskripsiBrg">
+					<input type="text" name="desc">
 				</div>
 			</div>
 		</div>

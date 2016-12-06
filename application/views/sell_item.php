@@ -22,6 +22,21 @@ if (!isset($_SESSION['user_name'])) {
 			</div>
 		</div>
 		<div class="form-group">
+			<label for="kategori" class="cols-sm-2">Kategori</label>
+			<div class="cols-sm-10">
+				<div class="input-group">
+					<select>
+						<option value="Menswear">Menswear</option>
+						<option value="Womenswear">Womenswear</option>
+						<option value="Dress">Dress</option>
+						<option value="Shoes For Men">Shoes For Men</option>
+						<option value="Shoes For Womem">Shoes For Womem</option>
+						<option value="Accessories">Accessories</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
 			<label for="desc" class="cols-sm-2">Deskripsi</label>
 			<div class="cols-sm-10">
 				<div class="input-group">

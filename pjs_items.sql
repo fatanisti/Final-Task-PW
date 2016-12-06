@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Des 2016 pada 09.04
+-- Generation Time: 06 Des 2016 pada 13.45
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -27,7 +27,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `pjs_items` (
-  `id` int(6) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_name` varchar(255) NOT NULL,
   `kategori` varchar(30) NOT NULL,
   `namaBarang` varchar(30) NOT NULL,
   `hargaBarang` varchar(30) NOT NULL,
@@ -54,7 +55,7 @@ ALTER TABLE `pjs_items`
 -- AUTO_INCREMENT for table `pjs_items`
 --
 ALTER TABLE `pjs_items`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

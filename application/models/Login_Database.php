@@ -14,7 +14,7 @@ Class Login_Database extends CI_Model {
         $this->db->select('*');
         $this->db->from('pjs_users');
         $this->db->where($condition);
-        $this->db->limit(1);
+        //$this->db->limit(1);
         $query = $this->db->get();
         if ($query->num_rows() == 1) {
             return true;
@@ -29,7 +29,7 @@ Class Login_Database extends CI_Model {
         $this->db->select('*');
         $this->db->from('pjs_users');
         $this->db->where($condition);
-        $this->db->limit(1);
+        //$this->db->limit(1);
         $query = $this->db->get();
 
         if ($query->num_rows() == 1) {
@@ -42,6 +42,29 @@ Class Login_Database extends CI_Model {
     public function new_user($data)
     {
         $this->db->insert('pjs_users',$data);
+    }
+
+    public function check_pass($mail,$old)
+    {
+        $cond = "user_pass =" . "'" . $old . "' AND " . "user_mail =" . "'" . $mail . "'";
+        $this->db->select('*');
+        $this->db->from('pjs_users');
+        //$this->db->where('user_pass',$old);
+        $this->db->where($cond);
+        $query = $this->db->get();
+        if ($query->num_rows() == 1) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function update_pass($data,$mail)
+    {
+        $this->db->set($data);
+        //$this->db->from('pjs_users');
+        $this->db->where('user_email',$mail);
+        $this->db->update('pjs_users');
     }
 }
 

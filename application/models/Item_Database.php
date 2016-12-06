@@ -14,7 +14,7 @@ class Item_Database extends CI_Model {
 
 	public function show_item($data)
 	{
-		$condition = "id_barang =" . "'" . $id . "'";
+		$condition = "nama_barang =" . "'" . $data['namaBarang'] . "' AND " . "user_name =" . "'" . $data['user_name'] . "'";
         $this->db->select('*');
         $this->db->from('pjs_items');
         $this->db->where($condition);

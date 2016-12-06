@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_name'])) {
 }
  ?>
  <div class="container center_div">
- 	<?php echo form_open('Item/jual_barang'); ?>
+ 	<?php echo form_open_multipart('Item/jual_barang'); ?>
 	<form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="images" class="cols-sm-2 control-label">Images</label>
@@ -16,7 +16,7 @@ if (!isset($_SESSION['user_name'])) {
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="nama_barang" class="cols-sm-2">Nama Barang</label>
+			<label for="nama_barang" class="cols-sm-2">Nama Barang</label>	
 			<div class="cols-sm-10">
 				<div class="input-group">
 				<input type="text" name="nama_barang">

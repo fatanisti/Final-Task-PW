@@ -46,11 +46,10 @@ Class Login_Database extends CI_Model {
         $this->db->insert('pjs_users',$data);
     }
 
-    public function check_pass() {
-        $this->db->select('user_pass');
+    public function check_pass($old) {
+        $this->db->select('*');
         $this->db->from('pjs_users');
-        $this->db->where('pjs_users.user_name',$session_data['user_name']);
-        //$this->db->limit(1);
+        $this->db->where('user_pass',$old);
         $query = $this->db->get('pjs_users');
         if ($query->num_rows() == 1) {
             return true;

@@ -223,20 +223,18 @@ class User extends CI_Controller {
             $this->load->view('footer');
         } else {
             $old = array('user_pass' => md5($this->input->post('old')) );
-            $cek_old = $this->login_database->check_pass();
-            if ($old != $cek_old) {
-               //$this->session->set_flashdata('error', 'Password Lama tidak sesuai');
+            $cek_old = $this->login_database->check_pass($old);
+            if ($cek_old != TRUE) {
                 $this->load->view('header');
                 $this->load->view('change_password');
                 $this->load->view('footer');
             }else{
-                $username = $this->session->userdata($session_data['user_name']);
-                $data = array('user_pass' => md5($this->input->post('new')) );
+                //$username = $this->session->userdata($session_data['user_name']);
+                $data = array('user_pass' => md5($this->input->post('new')));
                 $this->login_database->update_pass($username,$data);
-                $this->load->view('header');
-                $this->load->view('user');
-                $this->load->view('footer'); 
+                redirect('');
             }
+            
         }
     }
 

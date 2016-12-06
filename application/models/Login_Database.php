@@ -46,7 +46,7 @@ Class Login_Database extends CI_Model {
 
     public function check_pass($mail,$old)
     {
-        $cond = "user_pass =" . "'" . $old . "' AND " . "user_mail =" . "'" . $mail . "'";
+        $cond = "user_pass =" . "'" . $old . "' AND " . "user_email =" . "'" . $mail . "'";
         $this->db->select('*');
         $this->db->from('pjs_users');
         //$this->db->where('user_pass',$old);

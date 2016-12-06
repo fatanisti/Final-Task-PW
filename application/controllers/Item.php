@@ -35,28 +35,34 @@ Class Item extends CI_Controller {
                 'rules' => 'required',
                 'errors' => array('required' =>'Anda harus mengisi %s.'),
             ),
-            /*array(
-                'field' => 'desc',
-                'label' => 'Deskripsi Singkat'
-            ),*/
         );
+		$config['upload_path']          = './assets/img';
+        $config['allowed_types']        = 'jpg|png|bmp';
+        $config['max_size']             = 2048;
+        $config['max_width']            = 0;
+        $config['max_height']           = 0;
 
 	    $this->form_validation->set_rules($val_sell);
+	    $this->load->library('upload',$config);
 
 	    if ($this->form_validation->run() == FALSE) {
 	        $this->load->view('header');
 	        $this->load->view('sell_item');
 	        $this->load->view('footer');
 	    }else{
-	    	//$username = $this->session->userdata('user_name');s
+	    	$this->upload->do_upload('images');
+	    	$data_upload = $this->upload->data();
+	    	$image_path = $data_upload['full_path'];
 	        $data = array(
 	        	'user_name' => $this->session->userdata('user_name'),
                 'namaBarang' => $this->input->post('nama_barang') ,
                 'kategori' => $this->input->post('kategori'),
                 'deskripsiBrg' =>$this->input->post('desc'),           
-                'hargaBarang' =>$this->input->post('harga')
+                'hargaBarang' =>$this->input->post('harga'),
+                'image' => $image_path,
                 ); 
 
+	        //$img = array('upload_data' => $this->upload->data(), );
 	        $this->Item_Database->insert_item($data);
 
 	        $this->load->view('header');
@@ -67,9 +73,8 @@ Class Item extends CI_Controller {
 
 	 
 
-	 public function show_category()
+	 public function show_category($cat)
 	 {
-	 	$cat=$this->get('cat');
 		if ($cat === NULL) {
 			$this->load->view('header');
 			$this->load->view('layout');
@@ -77,7 +82,7 @@ Class Item extends CI_Controller {
 		}
 		else
 		{
-			$data = array($this->Item_Database->get_kategori($cat));
+			$data['item'] = $this->Item_Database->get_kategori($cat);
 			$this->load->view('header');
 			$this->load->view('category',$data);
 			$this->load->view('footer');			

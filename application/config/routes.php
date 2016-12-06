@@ -58,4 +58,4 @@ $route['coba1'] = 'User/user';
 $route['coba2'] = 'Item/add_items_page';
 $route['coba3'] = 'User/cp_index';
 $route['logout'] = 'User/logout';
-$route['cat/(:any)'] = 'Item/show_category/cat/$1';
+$route['cat/(:any)'] = 'Item/show_category/$1';

@@ -177,14 +177,6 @@ class User extends CI_Controller {
         $this->load->view('user');
         $this->load->view('footer');
     }
-
-    public function sell()
-    {
-        $this->load->view('header');
-        $this->load->view('sell_item');
-        $this->load->view('footer');
-    }
-
    
     public function cp_index()
     {

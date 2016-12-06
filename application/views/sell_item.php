@@ -4,7 +4,8 @@ if (!isset($_SESSION['user_name'])) {
 }
  ?>
  <div class="container center_div">
-	<form action="#" class="form-horizontal">
+ 	<?php form_open('Item/jual_barang'); ?>
+	<form action="#" class="form-horizontal" method="post">
 		<div class="form-group">
 			<label for="images" class="cols-sm-2 control-label">Images</label>
 			<div class="cols-sm-10">
@@ -54,8 +55,9 @@ if (!isset($_SESSION['user_name'])) {
 		</div>
 		<p class="text-center">
 			<a href="<?php echo base_url(); ?>/user/user" class="btn btn-danger btn-lg">Cancel</a>
-			<button class="btn btn-success btn-lg">Sell</button>
+			<button type="submit" class="btn btn-success btn-lg">Sell</button>
 		</p>
 		<p></p>
 	</form>
+	<?php form_close(); ?>
 </div>

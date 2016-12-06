@@ -86,17 +86,33 @@ if (!isset($_SESSION['user_name'])) {
 </div>
 
 <div class="modal" id="modalBayar">
-	
 	<div class="modal-content">
-		<div class="navbar navbar-inverse modal-header">
-			<span class="close" id="close">X</span>
-			<p>INI TITLE</p>
-		</div>
+		<nav class="navbar modal-header navbar-inverse">
+			<ul class="nav navbar-nav">
+				<li class="navbar-inverse"><p class="navbar-text">Konfirmasi Pembayaran</p></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<span class="close" id="close">X</span>
+			</ul>
+		</nav>
 		<div class="modal-body">
-			<p>INI PERMEN</p>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nama Barang</th>
+						<th>Harga</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>TITIT TITITAN</td>
+						<td>500000</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<div class="modal-footer">
-			<p>DARIPADA NGEMUT TITLE, MENDING NGEMUT TITIT</p>
+			<button class="btn btn-success btn-lg pull-right">Bayar</button>
 		</div>
 	</div>
 </div>

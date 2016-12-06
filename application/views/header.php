@@ -9,7 +9,7 @@ $this->load->library('session');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/user.js"></script>
   </head>
@@ -26,16 +26,19 @@ $this->load->library('session');
     <ul class="nav navbar-nav"">
       <li><a href="<?php echo base_url(); ?>"><span class="glyphicon glyphicon-home"></span></a></li>
       <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
-    <span class="caret"></span></a>
-    <ul class="dropdown-menu nav navbar-nav navbar-inverse">
-      <li><a href="menswear.html">Menswear</a></li>
-      <li><a href="womenswear.html">Womenswear</a></li>
-      <li><a href="dress.html">Dress</a></li>
-      <li><a href="shoesformen.html">Shoes For Men</a></li>
-      <li><a href="shoesforwomen.html">Shoes For Women</a></li>
-      <li><a href="accessories.html">Accessories</a></li>
-    </ul></li>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Products
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu nav navbar-nav navbar-inverse">
+          <li><a href="menswear.html">Menswear</a></li>
+          <li><a href="womenswear.html">Womenswear</a></li>
+          <li><a href="dress.html">Dress</a></li>
+          <li><a href="shoesformen.html">Shoes For Men</a></li>
+          <li><a href="shoesforwomen.html">Shoes For Women</a></li>
+          <li><a href="accessories.html">Accessories</a></li>
+        </ul>
+      </li>
       <li><a href="#">Deals</a></li>
       <li><a href="#">Stores</a></li>
       <li><a href="#">Contact</a></li>

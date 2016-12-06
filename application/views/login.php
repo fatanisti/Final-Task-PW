@@ -21,6 +21,9 @@
     </div>
   </div>  
 <?php endif ?>
+<?php if (isset($_SESSION['user_name'])) {
+  redirect('');
+} ?>
 <div class="container center_div">
   <div class="row main panel panel-default">
     <div class="panel-heading">

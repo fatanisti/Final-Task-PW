@@ -6,6 +6,8 @@ Class Item extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('session');
+		$this->load->library('form_validation');
+		$this->load->helper(array('url', 'form'));
 		$this->load->model('Item_Database');
 	}
 
@@ -52,6 +54,7 @@ Class Item extends CI_Controller {
 	        $this->load->view('footer');
 	    }else{
 	        $data = array(
+	        	'user_name' => $this->session->userdata('user_name'),
                 'kategori' => $this->input->post('kategori'),
                 'namaBarang' => $this->input->post('namaBarang') ,
                 'hargaBarang' =>$this->input->post('hargaBarang'),
@@ -60,7 +63,7 @@ Class Item extends CI_Controller {
 
 	        $this->Item_Database->insert_item($data);
 
-	        redirect('home');
+	        redirect('');
 	    }
 	}
 	

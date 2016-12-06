@@ -96,6 +96,7 @@ input[type="number"] {
 
 .modal-header {
   border-radius: 7px 7px 0 0;
+  padding: 10px;
 }
 
 /* The Close Button */
@@ -111,4 +112,11 @@ input[type="number"] {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.row-eq-height {
+  display: -webkit-flex-flow: row wrap;
+  display: flex-flow: row wrap;
+  display: -webkit-align-content: flex-end;
+  display: align-content: flex-end;
 }

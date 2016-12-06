@@ -48,7 +48,8 @@ if (!isset($_SESSION['user_name'])) {
 		    			</tbody>
 		    		</table>
 			    </div>
-			    <a href="#" class="btn btn-success btn-lg pull-right" style="margin-bottom: 10px;">Bayar</a>
+			    <a href="#" class="btn btn-success btn-lg pull-right" style="margin-bottom: 10px;" id="openModal">
+			    	Bayar</a>
 		    </div>
 		    <div id="sell" class="tab-pane fade">
 		    	<div class="table-responsive">
@@ -77,8 +78,45 @@ if (!isset($_SESSION['user_name'])) {
 		    			</tbody>
 		    		</table>
 		    	</div>
-		    	<a href="<?php echo base_url(); ?>index.php/user/sell" class="btn btn-success btn-lg pull-right" style="margin-bottom: 10px">Tambah</a>
+		    	<a href="<?php echo base_url(); ?>index.php/user/sell" class="btn btn-success btn-lg pull-right" 
+		    		style="margin-bottom: 10px">Tambah</a>
 		    </div>
   		</div>
   	</div>
 </div>
+
+<div class="modal" id="modalBayar">
+	
+	<div class="modal-content">
+		<div class="navbar navbar-inverse modal-header">
+			<span class="close" id="close">X</span>
+			<p>INI TITLE</p>
+		</div>
+		<div class="modal-body">
+			<p>INI PERMEN</p>
+		</div>
+		<div class="modal-footer">
+			<p>DARIPADA NGEMUT TITLE, MENDING NGEMUT TITIT</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	var btn = document.getElementById('openModal');
+	var modal = document.getElementById('modalBayar');
+	var close = document.getElementById('close');
+
+	btn.onclick = function () {
+		modal.style.display = "block";
+	}
+
+	close.onclick = function () {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function (event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+</script>

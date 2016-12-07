@@ -140,14 +140,14 @@ Class Item extends CI_Controller {
 
 	public function add_cart($id)
 	{
-		$cart_data = $this->Item_Database->item_id($id);
+		$cart_data = $this->Item_Database->get_item_id($id);
 		$cart = array('user_name' => $this->session->userdata('user_name'),
 		 			'hargaBrg' => $this->$cart_data[0]->hargaBrg,
 		 			'namaBrg' => $this->$cart_data[0]->namaBrg,
 		 			'owner_name' => $this->$cart_data[0]->user_name,
-		 			'qty' => $this->input->post('qty'),
+		 			//'qty' => $this->input->post('qty'),
 		 			);
-		$this->Item_Database->add_cart($data);
+		$this->Item_Database->add_cart($cart);
 	}
 }
 

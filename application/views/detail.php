@@ -28,15 +28,19 @@
         <td><?php echo $detail[0]->deskripsiBrg; ?></td>
       </tr>
     </table>
-    <a href="
-      <?php 
-      if (isset($_SESSION['user_name'])) {
-        echo base_url()."index.php/user/".$_SESSION['user_name']."#sell";
-      } else {
-        echo base_url()."index.php/login";
-      }
-      ?>
-    " class="btn btn-success btn-lg pull-right"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a>
+    <?php echo form_open('Item/add_cart'); ?>
+    <form>
+      <a href="
+        <?php 
+        if (isset($_SESSION['user_name'])) {
+          echo base_url()."index.php/user/".$_SESSION['user_name']."#sell";
+        } else {
+          echo base_url()."index.php/login";
+        }
+        ?>
+        " class="btn btn-success btn-lg pull-right" type="submit"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
+      </a>
+    </form>
   </div>
-
+  <?php echo form_close(); ?>
 </div>

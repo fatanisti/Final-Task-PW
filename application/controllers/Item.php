@@ -105,6 +105,18 @@ Class Item extends CI_Controller {
 		}
 	}
 
+	public function show_id($id)
+	{
+		if ($id === NULL) {
+			redirect('cat/(:any)');	
+		}else{
+			$item['detail'] = $this->Item_Database->get_item_id($id);
+			$this->load->view('header');
+			$this->load->view('detail',$data);
+			$this->load->view('footer');
+		}
+	}
+
 	public function delete_item($id)
 	{
 		if ($id === NULL) {

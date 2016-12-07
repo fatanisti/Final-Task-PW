@@ -47,6 +47,16 @@ class Item_Database extends CI_Model {
 		return $query->result();
 	}
 
+	public function get_item_id($id)
+	{
+		$condition = "id =" . "'" . $id."'";
+		$this->db->select('*');
+		$this->db->from('pjs_items');
+		$this->db->where($condition);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	public function delete_item($id)
 	{
 		$condition= "id =" . "'" .$id."'";

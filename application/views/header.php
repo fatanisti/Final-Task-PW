@@ -23,7 +23,7 @@ $this->load->library('session');
 </div>
 
 <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="141.3">
-    <ul class="nav navbar-nav"">
+    <ul class="nav navbar-nav">
       <li><a href="<?php echo base_url(); ?>"><span class="glyphicon glyphicon-home"></span></a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -31,22 +31,20 @@ $this->load->library('session');
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu nav navbar-nav navbar-inverse">
-          <li><a href="menswear.html">Menswear</a></li>
-          <li><a href="womenswear.html">Womenswear</a></li>
-          <li><a href="dress.html">Dress</a></li>
-          <li><a href="shoesformen.html">Shoes For Men</a></li>
-          <li><a href="shoesforwomen.html">Shoes For Women</a></li>
-          <li><a href="accessories.html">Accessories</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/cat/Menswear">Menswear</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/cat/Womenswear">Womenswear</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/cat/Dress">Dress</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/cat/Shoes For Men">Shoes For Men</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/cat/Shoes For Women">Shoes For Women</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/cat/Accessories">Accessories</a></li>
         </ul>
       </li>
-      <li><a href="#">Deals</a></li>
-      <li><a href="#">Stores</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="<?php echo base_url(); ?>index.php/contact">Contact</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <?php if (isset($_SESSION['user_name'])): ?>
         <li>
-          <a href="<?php echo base_url(); ?>index.php/coba1/<?php echo $_SESSION['user_name']." "; ?>">
+          <a href="<?php echo base_url(); ?>index.php/user/<?php echo $_SESSION['user_name']." "; ?>">
             <span class="glyphicon glyphicon-user"></span>
             <?php echo " ".$_SESSION['user_name']." "; ?>
           </a>

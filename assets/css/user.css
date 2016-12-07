@@ -11,6 +11,9 @@ html, body {
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
+  padding: 0px;
+  margin: auto;
+  width: 100%;
 }
 
 footer {

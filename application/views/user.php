@@ -1,10 +1,7 @@
 <?php 
-if (!isset($_SESSION['user_name'])) {
-	redirect('');
+if (isset($_SESSION['item'])) {
+	$item = $_SESSION['item'];
 }
-
-echo var_dump($item);
-die();
  ?>
 <div class="container-fluid">
 	<div class="panel text-center" id="user_panel">
@@ -13,18 +10,20 @@ die();
 			<hr>
 		</div>
 		<div class="panel-body">
-			<p>INI NAMA</p>
-			<p>INI EMAIL</p>
-			<a href="<?php echo base_url(); ?>index.php/coba3" class="btn btn-link">GANTI PASSWORD</a>
+			<p><?php echo $item[0]->user_name; ?></p>
+			<p><?php echo $_SESSION['user_email']; ?></p>
+			<a href="<?php echo base_url(); ?>index.php/coba3" class="btn btn-link">Change Password</a>
 		</div>
 	</div>
 	<div class="container" style="float: left; width: 80%; padding-left: 50px;">
 		<ul class="nav nav-tabs nav-justified">
-			<li role="presentation" class="active"><a data-toggle="tab" href="#cart">Cart</a></li>
-			<li role="presentation"><a data-toggle="tab" href="#sell">Sell</a></li>
+		<?php if (isset($_SESSION['user_name']) && $item[0]->user_name == $_SESSION['user_name']): ?>
+			<li role="presentation"><a data-toggle="tab" href="#cart">Cart</a></li>
+		<?php endif ?>
+			<li role="presentation" class="active"><a data-toggle="tab" href="#sell">Sell</a></li>
 		</ul>
 		<div class="tab-content">
-		    <div id="cart" class="tab-pane fade in active">
+		    <div id="cart" class="tab-pane fade">
 			    <div class="table-responsive">	
 		    		<table class="table table-striped container-fluid">
 		    			<thead>
@@ -54,7 +53,7 @@ die();
 			    <a href="#" class="btn btn-success btn-lg pull-right" style="margin-bottom: 10px;" id="openModal">
 			    	Bayar</a>
 		    </div>
-		    <div id="sell" class="tab-pane fade">
+		    <div id="sell" class="tab-pane fade in active">
 		    	<div class="table-responsive">
 		    		<table class="table table-striped container-fluid">
 		    			<thead>
@@ -66,22 +65,18 @@ die();
 		    				</tr>
 		    			</thead>
 		    			<tbody>
+		    				<?php foreach ($item as $barang): ?>
 		    				<tr>			    					
-			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
-			    				<td>Nama Barang</td>
-			    				<td>Harga Barang</td>
+			    				<td><img src="<?php echo base_url() . substr($barang->image, strpos($barang->image, 'assets')); ?>" alt="" height='150px' width='150px' style="overflow: hidden;"></td>
+			    				<td><?php echo $barang->namaBarang ?></td>
+			    				<td><?php echo $barang->hargaBarang ?></td>
 			    				<td><a href="#" class="btn btn-danger btn-lg">Delete</a></td>
 		    				</tr>
-		    				<tr>			    					
-			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
-			    				<td>Nama Barang</td>
-			    				<td>Harga Barang</td>
-			    				<td><a href="#" class="btn btn-danger btn-lg">Delete</a></td>
-		    				</tr>
+		    				<?php endforeach ?>
 		    			</tbody>
 		    		</table>
 		    	</div>
-		    	<a href="<?php echo base_url(); ?>index.php/user/sell" class="btn btn-success btn-lg pull-right" 
+		    	<a href="<?php echo base_url(); ?>index.php/sell" class="btn btn-success btn-lg pull-right" 
 		    		style="margin-bottom: 10px">Tambah</a>
 		    </div>
   		</div>

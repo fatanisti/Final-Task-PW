@@ -239,10 +239,10 @@ class User extends CI_Controller {
     }
 
         
-    public function detail()
+    public function contact()
     {
         $this->load->view('header');
-        $this->load->view('detail');
+        $this->load->view('contact');
         $this->load->view('footer');
     }
 }

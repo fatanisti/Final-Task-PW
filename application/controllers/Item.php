@@ -7,6 +7,7 @@ Class Item extends CI_Controller {
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->library('form_validation');
+		$this->load->library('cart');
 		$this->load->helper(array('url', 'form'));
 		$this->load->model('Item_Database');
 	}
@@ -102,6 +103,29 @@ Class Item extends CI_Controller {
 			$this->load->view('user',$data);
 			$this->load->view('footer');			
 		}
+	}
+
+	public function delete_item($id)
+	{
+		if ($id === NULL) {
+			$this->load->view('header');
+			$this->load->view('user');
+			$this->load->view('footer');	
+		}else{
+			$this->Item_Database->delete_item($id);
+		}
+	}
+
+	public function add_cart($id)
+	{
+		$cart_data = $this->Item_Database->item_id($id);
+		$cart = array('user_name' => $this->session->userdata('user_name'),
+		 			'hargaBrg' => $this->$cart_data[0]->hargaBrg,
+		 			'namaBrg' => $this->$cart_data[0]->namaBrg,
+		 			'owner_name' => $this->$cart_data[0]->user_name,
+		 			'qty' => $this->input->post('qty'),
+		 			);
+		$this->Item_Database->add_cart($data);
 	}
 }
 

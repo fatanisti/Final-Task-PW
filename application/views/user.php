@@ -1,4 +1,9 @@
-<?php 
+<?php
+$this->load->library('session');
+if (!isset($_SESSION['user_name'])) {
+	redirect('login');
+}
+
 if (isset($_SESSION['item'])) {
 	$item = $_SESSION['item'];
 }

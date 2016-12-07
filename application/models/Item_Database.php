@@ -46,6 +46,35 @@ class Item_Database extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	public function delete_item($id)
+	{
+		$condition= "id =" . "'" .$id."'";
+		$this->fb->select('*');
+		$this->db->from('pjs_items');
+		$this->db->where($condition);
+		$this->db->limit(1);
+		$this->db->delete('pjs_items',$id);
+	}
+
+	public function item_id($id)
+	{
+		$this->db->select('*');
+		$this->db->from('pjs_items');
+		//$this->db->join('pjs_users');
+		$this->db->where('pjs_items.id',$id);
+		$query = $this->db->get();
+		if ($query->num_rows() == 1) {
+			return $query->result();	
+		}else{
+			return false;
+		}
+	}
+
+	public function add_cart($data)
+	{
+		$this->db->insert('pjs_cart',$data);
+	}
 }
 
 ?>

@@ -42,6 +42,7 @@ class Item_Database extends CI_Model {
 		$condition = "user_name =" . "'" . $username."'";
 		$this->db->select('*');
 		$this->db->from('pjs_items');
+		//$this->db->join('pjs_users');
 		$this->db->where($condition);
 		$query = $this->db->get();
 		return $query->result();

@@ -61,3 +61,4 @@ $route['logout'] = 'User/logout';
 $route['cat/(:any)'] = 'Item/show_category/$1';
 $route['contact'] = 'User/contact';
 $route['detail/(:num)'] = 'Item/show_id/$1';
+$route['delete/(:num)'] = 'Item/delete_item/$1';

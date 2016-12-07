@@ -10,6 +10,7 @@ Class Item extends CI_Controller {
 		$this->load->library('cart');
 		$this->load->helper(array('url', 'form'));
 		$this->load->model('Item_Database');
+		$this->load->model('Login_Database');
 	}
 
 
@@ -98,7 +99,11 @@ Class Item extends CI_Controller {
 		}
 		else
 		{
-			$data['item'] = $this->Item_Database->get_item_user($username);
+			//$data['item'] = $this->Item_Database->get_item_user($username);
+			$data = array(
+					'item' =>$this->Item_Database->get_item_user($username),
+					'user' => $this->Login_Database->read_user_information($username)
+					);
 			$this->load->view('header');
 			$this->load->view('user',$data);
 			$this->load->view('footer');			
@@ -110,9 +115,14 @@ Class Item extends CI_Controller {
 		if ($id === NULL) {
 			redirect('cat/(:any)');	
 		}else{
-			$item['detail'] = $this->Item_Database->get_item_id($id);
+			
+			//$item['detail'] = $this->Item_Database->get_item_id($id);
+			$item = array(
+						'detail' => $this->Item_Database->get_item_id($id)
+						);
+		
 			$this->load->view('header');
-			$this->load->view('detail',$data);
+			$this->load->view('detail',$item);
 			$this->load->view('footer');
 		}
 	}

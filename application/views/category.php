@@ -22,6 +22,7 @@
       </div>
       <?php if ($i % 2 == 0 && $i > 0): ?>
         </div><div class="row">
+        <?php $i=-1; ?>
       <?php endif ?>
       <?php $i++; ?>
 

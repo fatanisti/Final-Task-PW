@@ -13,7 +13,7 @@ $this->load->library('session');
   <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/user.js"></script>
   </head>
-<body>
+<body onload="onLoad();">
 
 <div class="jumbotron">
   <div class="container text-center">

@@ -35,5 +35,8 @@
   var postData;
   var title = document.getElementById('title');
   postData = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+  while (postData.includes('%20')) {
+    postData = postData.replace("%20", " ");
+  }
   title.innerHTML = postData;
 </script>

@@ -7,7 +7,7 @@
         <div class="panel">
           <div class="panel-heading"></div>
           <div class="thumbnail">
-            <a href="detail-executive.html" target=" ">
+            <a href="<?php echo base_url().'index.php/detail/'.$satuan->id; ?>" target=" ">
               <div class="panel-body vertical-center" style="max-height: 300px; min-height: 300px; position: relative; overflow: hidden">
                   <img src="<?php echo base_url() . substr($satuan->image, strpos($satuan->image, "assets")); ?>" style="width:100%">
               </div>

@@ -19,10 +19,11 @@ $this->load->library('session');
   <div class="container text-center">
     <h1>Pak JuLi Store</h1>      
     <p>Be Stylish and Fashionable</p>
+    <p>"Think Before You Go Shopping"</p>
   </div>
 </div>
 
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="141.3">
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="189">
     <ul class="nav navbar-nav">
       <li><a href="<?php echo base_url(); ?>"><span class="glyphicon glyphicon-home"></span></a></li>
       <li class="dropdown">

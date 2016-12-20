@@ -7,7 +7,6 @@ Class Item extends CI_Controller {
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->library('form_validation');
-		$this->load->library('cart');
 		$this->load->helper(array('url', 'form'));
 		$this->load->model('Item_Database');
 		$this->load->model('Login_Database');
@@ -99,10 +98,10 @@ Class Item extends CI_Controller {
 		}
 		else
 		{
-			//$data['item'] = $this->Item_Database->get_item_user($username);
 			$data = array(
 					'item' =>$this->Item_Database->get_item_user($username),
-					'user' => $this->Login_Database->read_user_information($username)
+					'user' => $this->Login_Database->read_user_information($username),
+					'cart' => $this->Item_Database->get_cart($username),
 					);
 			$this->load->view('header');
 			$this->load->view('user',$data);
@@ -138,16 +137,29 @@ Class Item extends CI_Controller {
 		}
 	}
 
-	public function add_cart($id)
-	{
-		$cart_data = $this->Item_Database->get_item_id($id);
+	public function add_cart()
+	{	
+		$id = $this->input->post('id');
+		
+		$cart_data = $this->Item_Database->item_id($id);
+		//echo var_dump($cart_data);
+		//die();
 		$cart = array('user_name' => $this->session->userdata('user_name'),
-		 			'hargaBrg' => $this->$cart_data[0]->hargaBrg,
-		 			'namaBrg' => $this->$cart_data[0]->namaBrg,
-		 			'owner_name' => $this->$cart_data[0]->user_name,
+		 			'namaBrg' => $cart_data->namaBarang,
+		 			'hargaBrg' => $cart_data->hargaBarang,
+		 			'owner_name' => $cart_data->user_name,
 		 			//'qty' => $this->input->post('qty'),
 		 			);
 		$this->Item_Database->add_cart($cart);
+		$username = $this->session->userdata('user_name');
+		redirect("user/$username");
+	}
+
+	public function delete_cart()
+	{
+		$username = $this->session->userdata('user_name');
+		$this->Item_Database->delete_cart($username);
+		redirect("user/$username");
 	}
 }
 

@@ -29,25 +29,19 @@ if (!isset($_SESSION['user_name'])) {
 		    		<table class="table table-striped container-fluid">
 		    			<thead>
 		    				<tr>
-			    				<th>Gambar Barang</th>
 			    				<th>Nama Barang</th>
 			    				<th>Harga Barang</th>
-			    				<th>Hapus</th>
 		    				</tr>
 		    			</thead>
 		    			<tbody>
-		    				<tr>			    					
-			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
-			    				<td>Nama Barang</td>
-			    				<td>Harga Barang</td>
-			    				<td><a href="#" class="btn btn-danger btn-lg">Delete</a></td>
-		    				</tr>
-		    				<tr>			    					
-			    				<td><img src="<?php echo base_url(); ?>/assets/img/images.jpg" alt=""></td>
-			    				<td>Nama Barang</td>
-			    				<td>Harga Barang</td>
-			    				<td><a href="#" class="btn btn-danger btn-lg">Delete</a></td>
-		    				</tr>
+		    			<?php if (isset($cart)): ?>
+		    				<?php foreach ($cart as $barang): ?>
+			    				<tr>
+				    				<td><?php echo $barang->namaBrg; ?></td>
+				    				<td><?php echo $barang->hargaBrg; ?></td>
+			    				</tr>
+		    				<?php endforeach ?>
+		    			<?php endif ?>
 		    			</tbody>
 		    		</table>
 			    </div>
@@ -62,7 +56,6 @@ if (!isset($_SESSION['user_name'])) {
 			    				<th>Gambar Barang</th>
 			    				<th>Nama Barang</th>
 			    				<th>Harga Barang</th>
-			    				<th>Hapus Barang</th>
 		    				</tr>
 		    			</thead>
 		    			<tbody>
@@ -73,7 +66,6 @@ if (!isset($_SESSION['user_name'])) {
 			    				<td><img src="<?php echo base_url() . substr($barang->image, strpos($barang->image, 'assets')); ?>" alt="" height='150px' width='150px' style="overflow: hidden;"></td>
 			    				<td><?php echo $barang->namaBarang ?></td>
 			    				<td><?php echo $barang->hargaBarang ?></td>
-			    				<td><a href='<?php echo base_url()."index.php/delete/".$barang->id; ?>' class="btn btn-danger btn-lg">Delete</a></td>
 		    				</tr>
 		    				<?php endforeach ?>
 		    			<?php endif ?>
@@ -106,15 +98,22 @@ if (!isset($_SESSION['user_name'])) {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>TITIT TITITAN</td>
-						<td>500000</td>
-					</tr>
+				<?php if (isset($cart)): ?>
+		    				
+		    				<?php foreach ($cart as $barang): ?>
+		    				<tr>
+			    				<td><?php echo $barang->namaBrg ?></td>
+			    				<td><?php echo $barang->hargaBrg ?></td>
+		    				</tr>
+		    				<?php endforeach ?>
+		    			<?php endif ?>
 				</tbody>
 			</table>
 		</div>
 		<div class="modal-footer">
-			<button class="btn btn-success btn-lg pull-right">Bayar</button>
+			<?php echo form_open('item/delete_cart'); ?>
+			<button  type="submit" class="btn btn-success btn-lg pull-right">Bayar</button>
+			<?php echo form_close(); ?>
 		</div>
 	</div>
 </div>

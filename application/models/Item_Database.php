@@ -58,14 +58,10 @@ class Item_Database extends CI_Model {
 		return $query->result();
 	}
 
-	public function delete_item($id)
+	public function delete_cart($username)
 	{
-		$condition= "id =" . "'" .$id."'";
-		$this->fb->select('*');
-		$this->db->from('pjs_items');
-		$this->db->where($condition);
-		$this->db->limit(1);
-		$this->db->delete('pjs_items',$id);
+		$this->db->where('user_name',$username);
+		$this->db->delete('pjs_cart');
 	}
 
 	public function item_id($id)
@@ -76,7 +72,7 @@ class Item_Database extends CI_Model {
 		$this->db->where('pjs_items.id',$id);
 		$query = $this->db->get();
 		if ($query->num_rows() == 1) {
-			return $query->result();	
+			return $query->row();	
 		}else{
 			return false;
 		}
@@ -85,6 +81,15 @@ class Item_Database extends CI_Model {
 	public function add_cart($data)
 	{
 		$this->db->insert('pjs_cart',$data);
+	}
+
+	public function get_cart($username)
+	{
+		$this->db->select('*');
+		$this->db->where('user_name',$username);
+		$this->db->from('pjs_cart');
+		$query = $this->db->get();
+		return $query->result();
 	}
 }
 

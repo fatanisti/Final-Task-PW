@@ -29,17 +29,10 @@
       </tr>
     </table>
     <?php echo form_open('Item/add_cart'); ?>
-    <form>
-      <a href="
-        <?php 
-        if (isset($_SESSION['user_name'])) {
-          echo base_url()."index.php/user/".$_SESSION['user_name']."#sell";
-        } else {
-          echo base_url()."index.php/login";
-        }
-        ?>
-        " class="btn btn-success btn-lg pull-right" type="submit"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
-      </a>
+    <form method="post">
+      <button 
+         class="btn btn-success btn-lg pull-right" type="submit" name="id" value="<?php echo end($this->uri->segments) ?><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
+      </button>
     </form>
   </div>
   <?php echo form_close(); ?>

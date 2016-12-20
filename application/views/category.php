@@ -22,6 +22,7 @@
       </div>
       <?php if ($i % 2 == 0 && $i > 0): ?>
         </div><div class="row">
+        <?php $i=-1; ?>
       <?php endif ?>
       <?php $i++; ?>
 
@@ -34,5 +35,8 @@
   var postData;
   var title = document.getElementById('title');
   postData = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+  while (postData.includes('%20')) {
+    postData = postData.replace("%20", " ");
+  }
   title.innerHTML = postData;
 </script>

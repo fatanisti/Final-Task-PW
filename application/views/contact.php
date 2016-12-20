@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container center_div2">    
   <div class="row col-center-block">
     <div class="col-sm-6">
